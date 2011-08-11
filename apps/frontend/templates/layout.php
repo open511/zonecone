@@ -56,7 +56,7 @@
 			});
 		//]]>
 		</script>
-		<title>RoNoMo - Roadwork No More</title>
+		<title>RoNoMo * Roadwork No More</title>
 	</head>
 	<body>
 		<div id="header" class="ui-layout-north">
