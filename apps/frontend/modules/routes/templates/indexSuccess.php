@@ -1,0 +1,1 @@
+<?php include_partial('index', array('rw_user_routes' => $rw_user_routes)) ?>

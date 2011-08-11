@@ -1,0 +1,23 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           RwMtqExtention
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          rw_mtq_extention
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:   
+        display: [=mtq_id, rw_id, start_date, end_date, roadname, area] 
+      filter:  
+        display: [mtq_id, start_date, end_date, roadname, area]
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,15 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+#all:
+
+all:
+  sf_guard_plugin:
+    remember_key_expiration_age:  2592000   # 30 days in seconds
+    remember_cookie_name:         roadwork
+
+  sfApplyPlugin:
+    from:
+      email: "stephae.guidoin@gmail.com"
+      fullname: "Roadwork bot"

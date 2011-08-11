@@ -1,0 +1,20 @@
+applySuccess:
+  has_layout: true
+  layout: layoutnomap
+
+confirmSuccess:
+  has_layout: true
+  layout: layoutnomap
+
+settingsSuccess:
+  has_layout: true
+  layout: layoutnomap
+
+resetSuccess:
+  has_layout: true
+  layout: layoutnomap
+
+resetRequestSuccess:
+  has_layout: true
+  layout: layoutnomap
+

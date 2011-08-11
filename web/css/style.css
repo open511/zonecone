@@ -1,0 +1,337 @@
+/* Accent Colour: #5A7F85 */
+
+/* General */
+a { color: #5A7F85; }
+div.container { overflow: hidden; margin: 40px auto; width: 960px; }
+h2 { font-weight: bold; font-size: 22px; color: #000000; margin: 0 0 0.81em; line-height: 1.62em; }
+h4 { font-weight: bold; font-size: 14px; color: #000000; margin: 0 0 0.81em; line-height: 1.62em; }
+p { font-size: 14px; color: #404040; margin: 0 0 0.81em; line-height: 1.25em}
+
+/* Header */
+#header { background: #000 url('images/header_bg.gif') repeat-x left bottom; height: 30px; width: 100%;}
+#header h1 { line-height: 1; float: left; margin: 20px 0 0 0; font-size: 28px; font-weight: bold; color: #FFFFFF; }
+#header h1 a { line-height: 1; float: left; margin: 0; font-size: 28px; font-weight: bold; color: #FFFFFF; }
+#header h1 a:hover { text-decoration: none; }
+#header h1 span { font-size: 18px; font-weight: bold; color: #ADBFC2; }
+#header h1 span.beta { font-size: 18px; color: #FF5555; }
+#header p { float: left; line-height: 1; margin: 20px 0 0 10px; font-size: 18px; color: #D6DFE1; position: relative; bottom: -8px;  }
+
+#title {width: 100%; padding: 5px;}
+#menu { width: 98%; background-color: #444; margin: 53px 10px 3px 3px; padding: 1px;}
+#logo {float:left; margin: 0; padding: 0 15px 0 15px; background: #000}
+
+#m-routes {float: left;}
+#m-notif {float: left;}
+#m-new {float: left;}
+#logout{float: right;}
+#options {float: right;}
+#who {float: right;}
+#login {float: right;}
+#apply {float: right;}
+
+#m-routes, #m-notif, #m-new, #logout, #options, #who, #login, #apply {color: #ADBFC2; padding: 4px 8px; position: relative;}
+
+.route {
+	padding: 5px;
+	margin: 2px;
+}
+
+.route p {
+	padding: 2px;
+}
+
+.subroute {
+	margin-left: 10px;
+}
+
+.infoicon {
+	position:relative;
+	float:left;
+}
+
+.form {
+	padding: 5px 20px;
+}
+
+.formbutton {
+	text-align: right;
+}
+
+.warning {
+	margin: 10px;
+	padding : 10px;
+	background-color: #fcc;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #f55;
+	font-weight: bold;
+}
+
+/* Panels */
+div.ui-layout-west { 
+  background: #fff url('/images/bg-west.png') repeat-y;
+  overflow: auto; 
+  padding: 20px;
+  float: left;
+}
+
+
+.mainnomap {
+	margin-top: 50px;
+	width: 300px;
+}
+
+
+#panels { padding: 0 0 0 0; overflow: hidden; width: 100%;}
+#panels p { font-size: 12px; color: #000000; }
+#panels div.panel h2 { line-height: 1; font-weight: bold; padding: 5px 0 5px 10px; margin: 0; font-size: 16px; }
+#panels div.panel h2 a.link-text-selected { font-weight: bold; color: #000; }
+#panels div.panel h2 a.link-text-selected:hover { text-decoration: none; cursor: pointer; }
+#panels div.content { padding: 12px; }
+#panels div.content p { margin: auto; }
+
+/* Error display */
+#error-widget { display: none; }
+
+/* Plan a Trip */
+#panels form { margin: auto; }
+#panels form div { clear: both; overflow: hidden; margin: 0; padding: 0 0 5px; }
+#panels form div.submit { width: 100%; margin: 0; padding: 8px 0 0 0; text-align: right; }
+#panels form p.error { color:#F00; }
+#panels form a.help { color:#22F; }
+#panels form p input { width: 228px; }
+#panels form div.location-input { width: 248px; clear: none; float: left; overflow: hidden;}
+#panels form div.reverse-input { clear: none; padding: 32px 0px; vertical-align: middle; overflow: hidden;}
+
+/* Directions */
+#route-plan { display: none; }
+#route-plan ol { margin: 0; padding: 0; }
+#route-plan ol li { margin: 0 0 10px; padding: 0 0 10px 24px; list-style: none; background-position: top left; background-repeat: no-repeat; border-bottom: 1px dotted #808080; }
+#route-plan ol li.depart { background-image: url('../images/label_from.png');}
+#route-plan ol li.walk { background-image: url('../images/icon_walk.png'); }
+#route-plan ol li.board { background-image: url('../images/icon_bus.png'); }
+#route-plan ol li.alight { background-image: url('../images/icon_walk.png'); }
+#route-plan ol li.arrive { background-image: url('../images/label_to.png');}
+#route-plan p { margin: 0 0 10px; }
+#route-plan p.feedback { color: #808080; margin: 0; }
+#route-plan p.warning { color: #FF5555; }
+#route-plan a { color: #22F; }
+
+/* Map */
+div.ui-layout-center { 
+  padding-top: 0px; 
+  width: 60%;
+  float: right;
+}
+
+div.ui-layout-south { 
+  padding-top: 8px; 
+  width: 95%;
+  float: left;
+}
+
+#map_canvas { width: 100%; height: 100%; }
+#map_canvas div.tooltip { white-space: nowrap; padding: 2px; color: #000000; font-weight: bold; font-size: 12px; }
+
+/* About pages */
+#content { margin: 10px 40px 20px 20px;}
+
+/* Footer */
+#footer p { margin: 0 0 10px; }
+#footer p.nav { color: #C0C0C0; }
+#footer p.legal { color: #808080; }
+
+.sf_apply
+{
+
+  padding: 10px;
+}
+
+.sf_apply ul
+{
+  list-style: none;
+  display: block;
+}
+
+.sf_apply li
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sf_apply label
+{
+  display: block;
+  clear: left;
+  float: left;
+  width: 150px;
+  padding-right: 20px;
+}
+
+label
+{
+  clear: right;
+  float: right;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.sf_apply_notice
+{
+  padding-bottom: 20px;
+  font-size: 125%;
+}
+
+#sf_apply_logged_in_as
+{
+  float: right;
+  width: 160px;
+  padding: 10px;
+  border: 1px solid green;
+}
+
+#sf_apply_logged_in_as input
+{
+  margin-right: 4px;
+}
+
+#sf_guard_signin
+{
+  float: right;
+  padding: 10px;
+  width: 160px;
+  border: 1px solid green;
+}
+
+#sf_guard_signin p
+{
+  padding-top: 10px;
+}
+
+#sf_guard_signin fieldset
+{
+  margin-bottom: 5px;
+  border: none;
+}
+
+#sf_guard_signin .form-row
+{
+  padding: 5px;
+}
+
+#sf_guard_signin .form-row label
+{
+  display: block;
+}
+
+#sf_guard_signin .form-row input
+{
+  display: block;  
+  width: 100px;
+}
+
+#sf_guard_auth_forgot_password
+{
+  display: block;
+  padding-top: 10px;
+}
+
+#sf_apply_need_an_account
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#sf_apply_logged_in_as p
+{
+  padding-bottom: 10px;
+}
+
+#sf_apply_logout
+{
+  display: block;
+  float: left;
+  padding-left: 10px;
+  border: 1px solid green;
+}
+
+#sf_apply_settings
+{
+  display: block;
+  padding-bottom: 10px;
+}
+
+#sf_apply_settings input
+{
+  margin-right: 4px;
+}
+
+#sf_guard_auth_form
+{
+  width: 350px;
+}
+
+#sf_guard_auth_form fieldset
+{
+  margin-bottom: 10px;
+}
+
+#sf_guard_auth_form .form-row
+{
+  clear: both;
+  padding: 10px;
+}
+
+#sf_guard_auth_form label
+{
+  float: left;
+  width: 150px;
+}
+
+#sf_guard_auth_form input
+{
+  display: block;
+  width: 150px;
+}
+
+#sf_guard_auth_form .buttons
+{
+  border: none;
+}
+
+#sf_guard_auth_form .buttons input
+{
+  display: inline;
+  width: auto;
+}
+
+#sf_guard_auth_form .buttons p
+{
+  padding-bottom: 10px;
+}
+
+h2.sf_apply_heading
+{
+  padding-bottom: 20px;
+}
+
+.sf_apply_notice p
+{
+  padding-bottom: 10px;
+}
+
+.sf_apply_notice a
+{
+  padding: 4px;
+}
+
+.sf_apply a
+{
+  padding: 4px;
+}
+
+#sf_apply_logged_in_as a
+{
+  padding: 4px;
+}
+

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2011-08-06T15:39:03Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Signin</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Forgot your password?</source>
+        <target>Mot de passe oubli&eacute; ?</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Want to register?</source>
+        <target>Cr&eacute;er un compte?</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Click the button below to change your password. For security reasons, you 
+will receive a confirmation email containing a link allowing you to complete 
+the password change. 
+</source>
+        <target>Veuillez cliquer sur le bouton ci-dessous pour modifier votre mot de passe.&lt;br/&gt;
+	Pour des raisons de s&eacute;curit&eacute;, nous allons vous envoyer un courriel de v&eacute;rification
+	vous permettant par la suite de modifier votre mot de passe.</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Reset Password</source>
+        <target>Réinitialiser votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Apply for an Account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Create My Account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>or</source>
+        <target>ou</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Thanks for confirming your email address. You may now change your
+password using the form below.
+</source>
+        <target>Vous pouvez modifier votre mot de passe en utilisant le formulaire ci-dessous</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Reset My Password</source>
+        <target>Réinitialiser votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Thank you for confirming your account! You are now logged into the site.</source>
+        <target>Merci! Vous êtes maintenant connecter sur le site.</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Account Settings</source>
+        <target>Options du compte</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Save</source>
+        <target>Sauvegarder</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Forgot your username or password? No problem! Just enter your username &lt;strong&gt;or&lt;/strong&gt;
+your email address and click "Reset My Password." You will receive an email message containing both your username and
+a link permitting you to change your password if you wish.
+</source>
+        <target>Oubli de mot de passe ? Pas de problème! Il vous suffit d'entrer votre nom d'utilisateur ou votre courriel et cliquer sur le bouton pour recevoir des indications vous permettant de réinitialiser votre mot de passe de nouveau.</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Confirm Password</source>
+        <target>Confirmer le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Username</source>
+        <target>Nom d'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Email</source>
+        <target>Courriel</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Confirm Email</source>
+        <target>Confirmer le courriel</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Full Name</source>
+        <target>Nom complet</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Send notification</source>
+        <target>Envoi des notifications</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Username or E-Mail</source>
+        <target>Adresse courriel</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Remember</source>
+        <target>Se rappeler de moi</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Username or email</source>
+        <target>Nom d'utilisateur ou adresse courriel</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

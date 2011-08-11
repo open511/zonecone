@@ -1,0 +1,83 @@
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+rw:
+  url:                    /rw
+  class: sfMapFishRouteCollection
+  options:
+    model:                rwRoadwork
+    module:               rw
+
+notification:
+  url:                    /notification
+  class: sfMapFishRouteCollection
+  options:
+    model:                rwNotification
+    module:               notification
+
+routes_create:
+  url:   /routes/create
+  param: { module: routes, action: create }
+
+routes_index:
+  url:   /routes
+  param: { module: routes, action: index}
+
+
+routes:
+  url:                    /routes
+  class: sfMapFishRouteCollection
+  options:
+    model:                rwUserRoute
+    module:               routes
+
+
+rw_api_list:
+  url:     /api/rw
+  class:   sfDoctrineRoute
+  options: { model: rwRoadwork, type: list}
+  param:   { module: api, action: index}
+  requirements:
+    sf_method: [get]
+
+near:
+  url:   /near
+  param: { module: rw, action: near }
+
+apply:
+  url:  /apply
+  param: { module: sfApply, action: apply }
+
+reset:
+  url: /reset
+  param: { module: sfApply, action: reset }
+
+resetRequest:
+  url: /reset-request
+  param: { module: sfApply, action: resetRequest }
+
+validate:
+  url: /confirm/:validate
+  param: { module: sfApply, action: confirm }
+
+settings:
+  url: /settings
+  param: { module: sfApply, action: settings }
+
+deleteme:
+  url: /deleteme
+  param: { module: sfApply, action: delete }
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: routes, action: new }
+

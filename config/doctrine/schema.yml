@@ -1,0 +1,434 @@
+RwRoadwork:
+  connection: doctrine
+  actAs: { Timestampable: ~ }  
+  tableName: rw_roadwork
+  columns:
+    id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: rw_roadwork_id
+    source_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    name:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    raw_description:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    road_name:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    start_date:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    end_date:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    url:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    restriction:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    is_active:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    update_flag:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    geom:
+      type: blob()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    severity:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    start_date_text:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    end_date_text:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false            
+    description:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false     
+    direction:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    workaround:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false      
+  relations:
+    RwSource:
+      local: source_id
+      foreign: id
+      type: one
+    RwToRoute:
+      local: id
+      foreign: rw_id
+    RwMtqExtention:
+      local: id
+      foreign: rw_id
+RwSource:
+  connection: doctrine
+  actAs: { Timestampable: ~ }  
+  tableName: rw_source
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: rw_source_id
+    name:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    type:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    url:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    RwRoadwork:
+      local: id
+      foreign: source_id
+      type: many
+RwUserRoute:
+  connection: doctrine
+  actAs: { Timestampable: ~ }  
+  tableName: rw_user_route
+  columns:
+    id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: rw_user_route_id
+    user_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    name:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    distance_within:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    way_points:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    transport_type:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    usage:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    geom:
+      type: blob()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    start_point_name:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    end_point_name:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false      
+  relations:
+    SfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+    RwRoadwork:
+      local: geom
+      foreign: geom  
+    RwToRoute:
+      local: id
+      foreign: route_id         
+RwToRoute:
+  connection: doctrine
+  actAs: { Timestampable: ~ }  
+  tableName: rw_to_route
+  columns:
+    rw_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    route_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false      
+RwNotification:
+  connection: doctrine
+  actAs: { Timestampable: ~ }  
+  tableName: rw_notification
+  columns:
+    id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: true
+      sequence: rw_notification_id
+    user_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    rw_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    route_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    is_sent:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false  
+    rw_status:
+      type: string(1)
+      fixed: true
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    RwRoadwork:
+      local: rw_id
+      foreign: id
+      onDelete: cascade
+    RwUserRoute:
+      local: route_id
+      foreign: id
+      onDelete: cascade   
+    sfGuardUser:    
+      local: user_id
+      foreign: id
+      onDelete: cascade   
+sfGuardUserProfile:
+  tableName: sf_guard_user_profile
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(10)
+      notnull: true
+    email:
+      type: string(80)
+    fullname:
+      type: string(80)
+    validate:
+      type: string(17)
+    send_notification:
+      type: boolean(1)      
+  relations:
+    User:
+      class: sfGuardUser
+      foreign: id
+      local: user_id
+      type: one  
+      onDelete: cascade    
+      foreignType: one
+      foreignAlias: Profile 
+RwMtqExtention:
+  connection: doctrine
+  actAs: { Timestampable: ~ }  
+  tableName: rw_mtq_extention
+  columns:
+    id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: true
+      sequence: rw_mtq_extention_id
+    mtq_id:
+      type: string(12)
+      fixed: true
+      unsigned: false
+      notnull: true
+      primary: false
+    rw_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    mtq_url:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    name:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    start_date:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false  
+    end_date:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    mtq_update:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    roadname:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    direction:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    localisation:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    identification:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    restriction:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    workaround:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false              
+    area:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    RwRoadwork:
+      local: rw_id
+      foreign: id
+      onDelete: cascade

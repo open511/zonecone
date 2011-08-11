@@ -1,0 +1,1 @@
+<?php include_partial('index', array('rw_notifications' => $rw_notifications)) ?>

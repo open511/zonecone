@@ -1,0 +1,75 @@
+user_route:
+  url:                    /routes
+  class: sfMapFishRouteCollection
+  options:
+    model:                rwUserRoute
+    module:               routes
+
+rw_show:
+  url:     /rw/show/id/:id
+  class:   sfDoctrineRoute
+  options: { model: rwRoadwork, type: object }
+  param:   { module: rw, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+rw_list:
+  url:     /rw
+  class:   sfDoctrineRoute
+  options: { model: rwRoadwork, type: list}
+  param:   { module: rw, action: index}
+  requirements:
+    sf_method: [get]
+
+rw_api_list:
+  url:     /api/rw
+  class:   sfDoctrineRoute
+  options: { model: rwRoadwork, type: list}
+  param:   { module: api, action: index}
+  requirements:
+    sf_method: [get]
+
+rw:
+  url:                    /rw
+  class: sfMapFishRouteCollection
+  options:
+    model:                rwRoadwork
+    module:               rw
+
+near:
+  url:   /near
+  param: { module: rw, action: near }
+
+sf_guard_show_form:
+  url:   /showform
+  param: { module: sfGuardAuth, action: showform }
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

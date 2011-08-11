@@ -1,0 +1,221 @@
+var markerArray = new Array();
+var activeMarkers =  new Array();
+var infoWindowArray = new Array();
+var map;
+
+function infoCallback(map, marker, infowindow, id) { 
+	return function() { 
+		closeActiveMarkers();
+		activeMarkers[id] = 1;
+		infowindow.open(map, marker); 
+		}; }
+
+function closeActiveMarkers () {
+	for (i in activeMarkers){
+		infoWindowArray[i].close();
+	}	
+	
+	activeMarkers = [];
+}
+
+function ajaxToElement (url, targetElement, httpType, insertMode){
+
+  $.ajax({
+    url: url,
+    type: httpType,
+    error:function(msg){alert( "Error !: " + msg);},
+    success: function(html){
+      $(targetElement).append(html);
+    }
+  });
+}
+
+
+function displayRwOnMap(map){
+
+   $.getJSON('http://ubuntuhoedic.local:8888/frontend_dev.php/api/rw',"",
+  function(data) {
+
+	for (i in data){
+		var pointArray = [];
+
+		for (j in data[i]["coordinates"]){
+			var splited = data[i]["coordinates"][j].split(" ");
+			var points = new google.maps.LatLng(splited[1], splited[0]);
+			pointArray.push(points);
+		}
+		
+		//Display a marker for the first point available
+	   markerArray[data[i]["id"]] = new google.maps.Marker({
+   	     position: pointArray[0], 
+         map: map });
+
+	   infoWindowArray[data[i]["id"]] = new google.maps.InfoWindow({
+         content: "Chantier : " + data[i]["name"] + "(" + data[i]["id"] + ")"
+       });
+
+       google.maps.event.addListener(
+	     markerArray[data[i]["id"]], 
+	     'click', 
+	     infoCallback(map, markerArray[data[i]["id"]], infoWindowArray[data[i]["id"]], [data[i]["id"]]));
+
+  		
+  		//If many points, then draw a line
+		if (pointArray.length > 1){		
+  			var rwLine = new google.maps.Polyline({
+    			path: pointArray,
+    			strokeColor: "#FF0000",
+    			strokeOpacity: 0.5,
+    			strokeWeight: 6
+  			});
+
+  			rwLine.setMap(map);
+		}
+    }
+  
+  });
+}
+
+	
+function computeRouteFromGoogle (result) {
+
+		//Retrieve and format the path. Target format is "long1 lat1, long2 lat2, ..."
+		var fullString = "";
+	  	var myRoute = result.routes[0].overview_path;
+
+	  	for (var i = 0; i < myRoute.length; i++) {
+			var exploded = (myRoute[i] + ",").split(",");
+			fullString +=  exploded[1].replace(")", "").substring(1, 11) + " " + exploded[0].replace("(", "").substring(0, 10) + ",";
+     }
+
+	  fullString = fullString.replace(")", "");
+	  fullString = fullString.replace("(", "");
+	  
+	  //Set the value of an hidden form field to be sent to the server.
+	  var postValue = document.getElementById('geom');
+	  postValue.value = fullString.substring(0, fullString.length - 2);
+	
+	  getRwNearRoute(document.getElementById('geom').value);
+
+}  
+
+function getRwNearRoute (geom) {
+	
+  $.ajax({
+    type: "POST",
+    url: "near",
+    data: ({geom : geom}),
+    error:function(msg){alert( "Error !: " + msg);},
+    success: function(html){
+      $("#panels").append(html);
+    }
+  });	
+	
+} 
+
+
+function init(minLat, minLon, maxLat, maxLon) {
+
+  ajaxToElement ("showform", "#signup", "GET", "APPEND");
+
+
+  var rendererOptions = {
+    draggable: true
+  };
+
+    var bb = new google.maps.LatLngBounds(new google.maps.LatLng(minLat, minLon),
+					  new google.maps.LatLng(maxLat, maxLon));
+
+    map = new google.maps.Map(document.getElementById("map_canvas"), 
+    { 
+      zoom: 6, 
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: bb.getCenter() });
+
+    var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+    directionsDisplay.setMap(map);
+    var directionsService = new google.maps.DirectionsService();
+    
+
+
+
+    google.maps.event.addListener(directionsDisplay, 'directions_changed', function() {
+      computeRouteFromGoogle(directionsDisplay.directions);
+    });
+   
+    $('body').layout({ defaults: { spacing_open: 0 },
+                       applyDefaultStyles: true,
+                       west: { size: 320 },
+                       north: { innerHeight: 30 },
+                       center: { onresize_end: function () { google.maps.event.trigger(map, "resize"); } } });
+    map.fitBounds(bb);
+    
+    var placeService = new google.maps.places.PlacesService(map);
+
+    var geocoder = new google.maps.Geocoder();
+    var autocomplete = {
+ 
+      //This bit uses the geocoder to fetch address values
+      source: function(request, response) {
+          geocoder.geocode( {'address': request.term, 'bounds': bb }, function(results, status) {
+          response($.map(results, function(item) {
+            return {
+              label: item.formatted_address,
+              value: item.formatted_address
+            }
+          }));
+	  })},
+    }
+
+
+    
+    displayRwOnMap(map);
+    if (isAuthenticated){ajaxToElement ("routes", "#variable", "GET", "APPEND");}
+
+    
+    $("#from-input").autocomplete(autocomplete);
+    $("#to-input").autocomplete(autocomplete);    
+
+    $("#plan-button").button();
+    $("form#directions-form").submit(function() {
+	$('#error-widget').hide();
+	$('#from-input').blur();
+	$('#to-input').blur();
+
+	var oldPlanButtonVal = $("#plan-button").val();
+	
+	$("#plan-button").attr('disabled', 'disabled');
+	$("#plan-button").val("Working...");
+
+	var request = {
+            origin: $("#from-input").val(),
+            destination: $("#to-input").val(),
+            travelMode: google.maps.DirectionsTravelMode.DRIVING
+	};
+
+	directionsService.route(request, function(response, status) {
+	    $("#plan-button").removeAttr('disabled');
+	    $("#plan-button").val(oldPlanButtonVal);
+
+	    if (status == google.maps.DirectionsStatus.OK) {
+		directionsDisplay.setDirections(response);
+	    } else {
+		$('#error-widget').show();
+		console.log("Error processing directions!");
+	    }
+	});
+
+	return false;
+    });
+
+    $("#reverse-button").button({
+	text: false, 
+	icons: {
+	    primary: 'ui-icon-shuffle'
+	}
+    }).click(function() {
+	var fromval = $("#from-input").val();
+	$("#from-input").val($("#to-input").val());
+	$("#to-input").val(fromval);
+    });    
+}
