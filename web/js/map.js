@@ -92,14 +92,24 @@ function displayRwOnMap(map){
 			pointArray.push(points);
 		}
 		
-		var severity = 2;
-		if (data[i]["is_active"] == true){
-			if (data[i]["severity"] < 4 || data[i]["severity"] > 0){
-				severity = data[i]["severity"];
-			}
+		var iconName = "day-2"
+		if (data[i]["is_uncertain"] == true){
+		  iconName = "uncertain";
+		}
+		else if (data[i]["is_active"] == false){
+      iconName = "inactive";
 		}else{
+			if (data[i]["is_night"] == true){
+				iconName = "night-";
+			} else {
+				iconName = "day-";
+			}
 			
-			severity = 9;
+			if (data[i]["severity"] > 0 && data[i]["severity"] < 4){
+				iconName += data[i]["severity"];
+			} else{
+				iconName += "2";
+			}
 		}
 		
 		
@@ -107,10 +117,10 @@ function displayRwOnMap(map){
 	   markerArray[data[i]["id"]] = new google.maps.Marker({
    	     position: pointArray[0], 
          map: map,
-         icon: "/images/cone-small-"+ severity +".png" });
+         icon: "/images/cone-small-"+ iconName +".png" });
 
        infoWindowContent = "<div class='infowindow'>"
-       infoWindowContent = "<div class='infoicon'><img src='/images/cone-med-"+ severity +".png' alt='cone'/></div>";
+       infoWindowContent = "<div class='infoicon'><img src='/images/cone-med-"+ iconName +".png' alt='cone'/></div>";
        infoWindowContent += "<p><b>";
        if (data[i]["is_active"] == false){
 	     infoWindowContent +=  "[Inactif] ";
