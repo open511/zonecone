@@ -17,7 +17,7 @@ class rwActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-	 $this->roadworks = Doctrine_Core::getTable('RwRoadwork')->getTableWithGeom($request->getParameter('id'));
+	 $this->roadworks = Doctrine_Core::getTable('RwRoadwork')->getRwById($request->getParameter('id'));
 	 
     $this->forward404Unless($this->roadworks);
   }
@@ -42,7 +42,7 @@ class rwActions extends sfActions
   public function executeEdit(sfWebRequest $request)
   {
   	
-	 $roadworks = Doctrine_Core::getTable('RwRoadwork')->getTableWithGeom($request->getParameter('id'));
+	 $roadworks = Doctrine_Core::getTable('RwRoadwork')->getRwById($request->getParameter('id'));
 	      	
     $this->forward404Unless($roadworks, sprintf('Object roadwork does not exist (%s).', $request->getParameter('id')));
     $this->form = new RwRoadworkForm($roadworks[0]);

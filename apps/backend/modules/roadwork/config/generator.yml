@@ -1,0 +1,24 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           RwRoadwork
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          rw_roadwork
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:   
+        display: [id, =name, road_name, start_date, end_date, road_name] 
+      filter:  ~ 
+      form: 
+        display: [id, name, road_name, start_date, end_date, start_date_text, end_date_text, severity, is_active, is_uncertain, is_night, restriction, raw_description, description, direction, workaround, url, geom, source_id, created_at, updated_at]
+      edit:    ~
+      new:     ~
+    

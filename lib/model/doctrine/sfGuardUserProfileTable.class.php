@@ -16,4 +16,13 @@ class sfGuardUserProfileTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('sfGuardUserProfile');
     }
+
+	public function getProfileByUserId($id){
+		
+		return  $this->createQuery('n')
+	    ->where('user_id = ?', $id)
+	    ->fetchOne();
+	
+	
+	}
 }

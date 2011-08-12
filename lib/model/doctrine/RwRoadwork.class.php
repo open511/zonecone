@@ -91,6 +91,8 @@ class RwRoadwork extends BaseRwRoadwork
       'endDate'	     => $endDate,
       'severity'     => $severity,
 	  'is_active'    => $this->getIsActive(),
+	  'is_night'	 => $this->getIsNight(),
+	  'is_uncertain' => $this->getIsUncertain(),
      );
    
      return $publicArray;    

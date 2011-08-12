@@ -17,6 +17,8 @@ Doctrine_Manager::getInstance()->bindComponent('RwRoadwork', 'doctrine');
  * @property string $url
  * @property string $restriction
  * @property boolean $is_active
+ * @property boolean $is_uncertain
+ * @property boolean $is_night
  * @property boolean $update_flag
  * @property blob $geom
  * @property integer $severity
@@ -41,6 +43,8 @@ Doctrine_Manager::getInstance()->bindComponent('RwRoadwork', 'doctrine');
  * @method string              getUrl()             Returns the current record's "url" value
  * @method string              getRestriction()     Returns the current record's "restriction" value
  * @method boolean             getIsActive()        Returns the current record's "is_active" value
+ * @method boolean             getIsUncertain()     Returns the current record's "is_uncertain" value
+ * @method boolean             getIsNight()         Returns the current record's "is_night" value
  * @method boolean             getUpdateFlag()      Returns the current record's "update_flag" value
  * @method blob                getGeom()            Returns the current record's "geom" value
  * @method integer             getSeverity()        Returns the current record's "severity" value
@@ -64,6 +68,8 @@ Doctrine_Manager::getInstance()->bindComponent('RwRoadwork', 'doctrine');
  * @method RwRoadwork          setUrl()             Sets the current record's "url" value
  * @method RwRoadwork          setRestriction()     Sets the current record's "restriction" value
  * @method RwRoadwork          setIsActive()        Sets the current record's "is_active" value
+ * @method RwRoadwork          setIsUncertain()     Sets the current record's "is_uncertain" value
+ * @method RwRoadwork          setIsNight()         Sets the current record's "is_night" value
  * @method RwRoadwork          setUpdateFlag()      Sets the current record's "update_flag" value
  * @method RwRoadwork          setGeom()            Sets the current record's "geom" value
  * @method RwRoadwork          setSeverity()        Sets the current record's "severity" value
@@ -161,6 +167,22 @@ abstract class BaseRwRoadwork extends sfMapFishRecord
              'length' => '',
              ));
         $this->hasColumn('is_active', 'boolean', 1, array(
+             'type' => 'boolean',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 1,
+             ));
+        $this->hasColumn('is_uncertain', 'boolean', 1, array(
+             'type' => 'boolean',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 1,
+             ));
+        $this->hasColumn('is_night', 'boolean', 1, array(
              'type' => 'boolean',
              'fixed' => 0,
              'unsigned' => false,

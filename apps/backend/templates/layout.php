@@ -16,6 +16,10 @@
         <tr><td>
             <?php echo link_to('Sources des chantiers', 'rw_source') ?>
           </td><td>
+            <?php echo link_to('Gestion des chantiers', 'rw_roadwork') ?>
+          </td><td>
+            <?php echo link_to('Extention MTQ', 'rw_mtq_extention') ?>
+          </td><td>
             <?php echo link_to('Gestion des usagers', 'sf_guard_user') ?>
           </td><td>
             <?php echo link_to('Gestion des permission', 'sf_guard_permission') ?>
