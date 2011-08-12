@@ -63,6 +63,18 @@ RwRoadwork:
       unsigned: false
       notnull: false
       primary: false
+    is_uncertain:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    is_night:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false            
     update_flag:
       type: boolean(1)
       fixed: false

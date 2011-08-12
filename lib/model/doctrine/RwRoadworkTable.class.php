@@ -31,15 +31,35 @@ class RwRoadworkTable extends sfMapFishTable
 		  ->select('*')
         ->from('rwRoadwork');
         
-      if(isset($id)){
-      	$q->addWhere("id = ?", $id);	
-      }
+      //if(isset($id)){
+      //	$q->addWhere("id = ?", $id);	
+      //}
+
+     $q->where("is_active = ?", true)
+        ->orWhere("is_active = false AND date_trunc('day', \"end_date\") >= CURRENT_DATE");
 	     
 	   return $q->execute();     
 	 }
 
 
 
+	    /**
+	     * Retrieve one object. 
+	     * @return object RwRoadworkTable (should return a RW object insteat but stay like that for histical reason :p)
+	     */
+	    public function getRwById($id) {
+    //TODO change in order to retrieve just an object instead of the table... but the behaviour of the caller will change...
+	//TODO have the field name and 4326 set as configuration constants
+	//TODO also : it might be possible to avoir the "select(*) and the from statement...
+
+	      $q = mfQuery::create('geom', 4326)
+			  ->select('*')
+	        ->from('rwRoadwork');
+
+	      	$q->addWhere("id = ?", $id);	
+
+		   return $q->execute();     
+		 }
 
     /**
      * Same as regular get Table but get only "public" field to be displayed in an API Query

@@ -12,6 +12,8 @@ class RwRoadworkForm extends BaseRwRoadworkForm
 {
   public function configure()
   {
+		$this->setWidget('geom',new sfWidgetFormInputHidden());
+		$this->setValidator('geom',new sfValidatorString());
   }
 
   public function unsetGeom(){

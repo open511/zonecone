@@ -45,35 +45,41 @@ EOF;
 	$this->configuration->loadHelpers('Partial', 'Url');
 
 
+
       //Get Users with unsent notification
 	  $users = Doctrine_Core::getTable('RwNotification')->getUsersWithPendingNotif();
 	
        foreach ($users as $userId){
 
-	     $rw_notifications = Doctrine_Core::getTable('RwNotification')->getUnsentNotifByUser($userId['user_id']);
+	       $rw_notifications = Doctrine_Core::getTable('RwNotification')->getUnsentNotifByUser($userId['user_id']);
 
-	       // generate HTML part
-	       $context->getRequest()->setRequestFormat('html');
-	       $html  = get_partial("notification/mail", array('rw_notifications' => $rw_notifications));
-	       //$message->setBody($html, 'text/html');
+         $user_detail = Doctrine_Core::getTable('sfGuardUserProfile')->getProfileByUserId($userId['user_id']);
+
+         if ($user_detail->getSendNotification() == true){
+
+		       // generate HTML part
+		       $context->getRequest()->setRequestFormat('html');
+		       $html  = get_partial("notification/mail", array('rw_notifications' => $rw_notifications));
+		       //$message->setBody($html, 'text/html');
 	
-   	       // generate plain text part
-	       $context->getRequest()->setRequestFormat('txt');
-	       $plain = get_partial("notification/mail", array('rw_notifications' => $rw_notifications));
-	       //$message->addPart($plain, 'text/plain');
+	   	       // generate plain text part
+		       $context->getRequest()->setRequestFormat('txt');
+		       $plain = get_partial("notification/mail", array('rw_notifications' => $rw_notifications));
+		       //$message->addPart($plain, 'text/plain');
 
-	       $transport = common::getMailTransport();
-	       $message = new Zend_Mail();
-	       $message->setSubject("Nouveaux chantiers!");
+		       $transport = common::getMailTransport();
+		       $message = new Zend_Mail();
+		       $message->setSubject("Nouveaux chantiers!");
 
-		   // Render message parts
-		   $message->setBodyHtml($html, 'text/html');
-		   $message->setBodyText($plain, 'text/plain');
-		   $message->setFrom('bot@ronomo.net', 'RoNoMo RoBoTo');
-		   $message->addTo($rw_notifications[0]->getSfGuardUser()->getEmailAddress(), 
-		     $rw_notifications[0]->getSfGuardUser()->getFirstName() . " " . $rw_notifications[0]->getSfGuardUser()->getLastName());
-		   $message->send($transport);
+			     // Render message parts
+			     $message->setBodyHtml($html, 'text/html');
+			     $message->setBodyText($plain, 'text/plain');
+			     $message->setFrom('bot@ronomo.net', 'RoNoMo RoBoTo');
+			     $message->addTo($rw_notifications[0]->getSfGuardUser()->getEmailAddress(), 
+			       $rw_notifications[0]->getSfGuardUser()->getFirstName() . " " . $rw_notifications[0]->getSfGuardUser()->getLastName());
+			     $message->send($transport);
 
+         }
 		
 		   foreach ($rw_notifications as $rw_notification){
 		     $rw_notification->is_sent = true;
