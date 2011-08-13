@@ -166,6 +166,50 @@ function displayRwOnMap(map){
 }
 
 	
+function displayRoute(geom){
+	
+	var pointArray = [];
+	var geomSplited = geom.split(",");
+	for (j in geomSplited){
+		var LongLat = geomSplited[j].split(" ");
+
+		pointArray.push(new google.maps.LatLng(LongLat[1], LongLat[0]));
+	}	
+	
+	var rwLine = new google.maps.Polyline({
+			path: pointArray,
+			strokeColor: "#0000FF",
+			strokeOpacity: 0.5,
+			strokeWeight: 6
+		});
+
+	rwLine.setMap(map);		
+	
+	var minLat, minLng, maxLat, maxLng;
+	
+	//A little painful to get to bounds... 
+	if (pointArray[0].lat() >= pointArray[(pointArray.length - 1)].lat()){
+		maxLat = pointArray[0].lat();
+		minLat = pointArray[(pointArray.length - 1)].lat();
+	} else {
+		minLat = pointArray[0].lat();
+		maxLat = pointArray[(pointArray.length - 1)].lat();
+	}
+	
+	if (pointArray[0].lng() >= pointArray[(pointArray.length - 1)].lng()){
+		maxLng = pointArray[0].lng();
+		minLng = pointArray[(pointArray.length - 1)].lng();
+	} else {
+		minLng = pointArray[0].lng();
+		maxLng = pointArray[(pointArray.length - 1)].lng();
+	}
+
+	bb = new google.maps.LatLngBounds(new google.maps.LatLng(minLat, minLng),
+						  new google.maps.LatLng(maxLat, maxLng));
+
+  map.fitBounds(bb);
+}
+	
 function computeRouteFromGoogle (result) {
 
 		//Retrieve and format the path. Target format is "long1 lat1, long2 lat2, ..."
@@ -319,14 +363,19 @@ function init(minLat, minLon, maxLat, maxLon) {
                        north: { innerHeight: 30 },
                        center: { onresize_end: function () { google.maps.event.trigger(map, "resize"); } } });
     map.fitBounds(bb);
+
+    if (routeToDisplay != 0){
+	    displayRoute(routeToDisplay);
+    }
+
+    
+    displayRwOnMap(map);
+
     formSetUp(bb);
     var placeService = new google.maps.places.PlacesService(map);
 
 
 
-
-    
-    displayRwOnMap(map);
     //if (isAuthenticated){ajaxToElement ("routes", "#variable", "GET", "APPEND");}
 
 //TODO : Mettre la prepa du formulaire dans une autre fonction qui pourrait être appel quand on fait un showContent('new-route')

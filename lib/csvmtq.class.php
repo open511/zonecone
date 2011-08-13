@@ -95,8 +95,6 @@ class CSVMTQ
 		$this->extractRoadName();
 		$this->extractName();
 
-		
-		
 	}
 
 
@@ -109,17 +107,17 @@ class CSVMTQ
 
 	  $csv = new CSVMTQ($csvLine);
 
-      //Let's exclude rw with no geometry...
+    //Let's exclude rw with no geometry...
 	  if (is_null($csv->formattedGeom)){
-		echo "Pas de formatted geom \n";
-		return false;
+		  echo "Pas de formatted geom \n";
+		  return false;
 	  }
 
 	  if(!($roadwork = Doctrine::getTable('rwRoadwork')->getTableByGeom($csv->formattedGeom))){
 
 	    $roadwork = new rwRoadwork();
-		$roadwork->rwStatus = RwRoadwork::$rwStatusEnum['is_new']; // 
-        echo "Nouveau chantier trouvé : ". $csv->name ."\n";
+		  $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['is_new']; // 
+      echo "Nouveau chantier trouvé : ". $csv->name ."\n";
 	  } else {
 		//TODO (optional) : array of modified fields is not used currently
 		//TODO IMPORTANT : VERIF OF UPDATE DISABLED FOR THE MOMENT!!!		
@@ -128,7 +126,13 @@ class CSVMTQ
 		//  $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['is_updated'];
         //  echo "Update d'un chantier existant : ". $csv->name ."\n";
 		//} else{
-		  $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['no_change'];
+			
+			if ($roadwork->getIsActive() == false){
+				//If the roadwork was existing but not active, it mean it's reactived
+		    $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['is_reactivated'];
+		  } else {
+		    $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['no_change'];			
+		  }
           //echo "Chantier existant non changé : ". $roadwork->name ."\n";
 		//}
     	
