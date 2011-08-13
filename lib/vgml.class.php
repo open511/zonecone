@@ -98,11 +98,14 @@ class VGML
 	  } else {
 		//TODO (optional) : array of modified fields is not used currently
         $modifs = $vgml->isModified($roadwork);
-        if (count($modifs)>0){
-		  $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['is_updated'];
+        if ($roadwork->getIsActive() == false){
+	         //if the roadwork was already there but inactive, it means it's a reactivation
+          $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['is_reactivated'];
+        } elseif (count($modifs)>0){
+		      $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['is_updated'];
           echo "Update d'un chantier existant : ". $vgml->name ."\n";
-		} else{
-		  $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['no_change'];
+		    } else{
+		      $roadwork->rwStatus = RwRoadwork::$rwStatusEnum['no_change'];
           //echo "Chantier existant non changé : ". $roadwork->name ."\n";
 		}
     	

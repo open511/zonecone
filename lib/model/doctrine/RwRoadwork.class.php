@@ -21,12 +21,14 @@ class RwRoadwork extends BaseRwRoadwork
    'is_updated' => 'u',
    'is_new' => 'n',
    'is_deleted' => 'd',
+   'is_deactivated' => 'a',
+   'is_reactivated' => 'r',
    'no_change' => '0',
    'error'  => 'e'
  );
 
  public $wasNew = false;
- public $rwStatus;  //n = new, u = update, d = delete, 0 = no change
+ public $rwStatus;  //must be a value from $rwStatusEnum
  public $updatedFields; 
  
  public function wasNew(){

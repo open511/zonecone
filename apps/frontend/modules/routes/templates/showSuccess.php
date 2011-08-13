@@ -1,3 +1,10 @@
+<?php 
+  preg_match('/LINESTRING\(([0-9\- ,\.]*)\)/', $rw_user_routes[0]->getGeom(), $match);
+  slot(
+  'geom',
+   sprintf("%s",  $match[1]));
+?>
+
 <?php foreach ($rw_user_routes as $rw_user_route): ?> 
 <h2><?php echo $rw_user_route->getName() ?></h2>
 

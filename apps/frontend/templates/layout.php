@@ -23,8 +23,16 @@
 		} else {
 			echo "0";
 		}
+    ?>;
+
+		var routeToDisplay = "<?php
+		 if (sfContext::getInstance()->getRouting()->getCurrentRouteName() == "routes_show"){
+		 include_slot('geom') ;
+		} else {
+			echo "0";
+		}
+		 ?>";
 		
-		?>;
 		//]]>
 		</script>
 		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
@@ -90,8 +98,6 @@
 				<?php if ($sf_user->isAuthenticated() == 1 ): ?>
 				<div class="panel" id ="new-route">
 					<div class="content">
-						<?php echo "statut " . $sf_user->isAuthenticated() ?>
-						Formulaire nouvelle route
 					</div>
 				</div>
 				<div class="panel" id="my-routes">
