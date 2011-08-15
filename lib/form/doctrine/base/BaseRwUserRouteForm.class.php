@@ -25,6 +25,7 @@ abstract class BaseRwUserRouteForm extends BaseFormDoctrine
       'geom'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('RwRoadwork'), 'add_empty' => false)),
       'start_point_name' => new sfWidgetFormTextarea(),
       'end_point_name'   => new sfWidgetFormTextarea(),
+      'file'             => new sfWidgetFormTextarea(),
       'created_at'       => new sfWidgetFormDateTime(),
       'updated_at'       => new sfWidgetFormDateTime(),
     ));
@@ -40,6 +41,7 @@ abstract class BaseRwUserRouteForm extends BaseFormDoctrine
       'geom'             => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('RwRoadwork'))),
       'start_point_name' => new sfValidatorString(),
       'end_point_name'   => new sfValidatorString(),
+      'file'             => new sfValidatorString(array('required' => false)),
       'created_at'       => new sfValidatorDateTime(),
       'updated_at'       => new sfValidatorDateTime(),
     ));

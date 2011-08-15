@@ -13,7 +13,7 @@ class RwUserRouteForm extends BaseRwUserRouteForm
   public function configure()
   {
 	
-	$this->useFields(array('start_point_name', 'end_point_name', 'name', 'way_points', 'geom', 'user_id'));
+	$this->useFields(array('start_point_name', 'end_point_name', 'name', 'way_points', 'geom', 'user_id', 'file'));
 
 
 	$this->setWidget('geom',new sfWidgetFormInputHidden());
@@ -24,6 +24,15 @@ class RwUserRouteForm extends BaseRwUserRouteForm
 	$this->setWidget('name',new sfWidgetFormInputText());
     $this->setValidator('geom',new sfValidatorString());
 
+	$this->widgetSchema['file'] = new sfWidgetFormInputFile(array(
+		  'label' => 'Fichier (KML)',
+		));
+
+	$this->validatorSchema['file'] = new sfValidatorFile(array(
+	  'required'   => false,
+	  'path'       => sfConfig::get('sf_upload_dir').'/routes',
+	  'max_size'   => 500000,
+	));
 	
 	$this->widgetSchema->setLabels(array(
 	  'start_point_name'    => 'D&eacute;part',

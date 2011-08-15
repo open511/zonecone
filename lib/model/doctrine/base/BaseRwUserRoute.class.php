@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('RwUserRoute', 'doctrine');
  * @property blob $geom
  * @property string $start_point_name
  * @property string $end_point_name
+ * @property string $file
  * @property RwRoadwork $RwRoadwork
  * @property RwToRoute $RwToRoute
  * @property Doctrine_Collection $RwNotification
@@ -31,6 +32,7 @@ Doctrine_Manager::getInstance()->bindComponent('RwUserRoute', 'doctrine');
  * @method blob                getGeom()             Returns the current record's "geom" value
  * @method string              getStartPointName()   Returns the current record's "start_point_name" value
  * @method string              getEndPointName()     Returns the current record's "end_point_name" value
+ * @method string              getFile()             Returns the current record's "file" value
  * @method RwRoadwork          getRwRoadwork()       Returns the current record's "RwRoadwork" value
  * @method RwToRoute           getRwToRoute()        Returns the current record's "RwToRoute" value
  * @method Doctrine_Collection getRwNotification()   Returns the current record's "RwNotification" collection
@@ -44,6 +46,7 @@ Doctrine_Manager::getInstance()->bindComponent('RwUserRoute', 'doctrine');
  * @method RwUserRoute         setGeom()             Sets the current record's "geom" value
  * @method RwUserRoute         setStartPointName()   Sets the current record's "start_point_name" value
  * @method RwUserRoute         setEndPointName()     Sets the current record's "end_point_name" value
+ * @method RwUserRoute         setFile()             Sets the current record's "file" value
  * @method RwUserRoute         setRwRoadwork()       Sets the current record's "RwRoadwork" value
  * @method RwUserRoute         setRwToRoute()        Sets the current record's "RwToRoute" value
  * @method RwUserRoute         setRwNotification()   Sets the current record's "RwNotification" collection
@@ -135,6 +138,14 @@ abstract class BaseRwUserRoute extends sfMapFishRecord
              'fixed' => 0,
              'unsigned' => false,
              'notnull' => true,
+             'primary' => false,
+             'length' => '',
+             ));
+        $this->hasColumn('file', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
              'primary' => false,
              'length' => '',
              ));

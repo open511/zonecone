@@ -7,6 +7,11 @@
 
 ?>
 
+<?php if ($sf_user->isAuthenticated()): ?>
+<input type="button" id="switch-to-import" onclick="showImportFile()" value="Importer un fichier (KML, etc.)">
+<input type="button" id="switch-to-google" onclick="showAskGoogle()" value="Tracer votre trajet">
+<?php endif;?>
+
 <form class="ui-form" action="<?php echo url_for('routes/'.($form->getObject()->isNew() ? 'create' : 'update').(!$form->getObject()->isNew() ? '?id='.$form->getObject()->getId() : '')) ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
 
 	<?php 
@@ -23,10 +28,11 @@
 
 	  
 	  if (!$widget->isHidden()){
-	    echo "\n<p><strong>" . $widget->renderLabel()  . "<br/></strong>";
+	    echo "\n<p id='input_". $widget->renderId() ."'><strong>" . $widget->renderLabel()  . "<br/></strong>";
 	  }
 	    echo $widget->renderError();
-	    echo  $widget->render() . "</p>";
+	    echo  $widget->render();
+	    echo "</p>";
 
 	} 
 	?>

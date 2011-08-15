@@ -38,11 +38,26 @@ function showContent(div){
 		  //init(45.52, -73.71, 45.75, -73.09);
 		  formSetUp(bb);
 		  $('#save-button').show();
+		  showAskGoogle();
 	    }
 	  });
 
 	
 	}	
+}
+
+function showImportFile(){
+	$('#plan-button').hide();
+	$('#input_rw_user_route_file').show();
+	$('#switch-to-google').show();
+	$('#switch-to-import').hide();
+}
+
+function showAskGoogle(){
+	$('#input_rw_user_route_file').hide();
+	$('#plan-button').show();
+	$('#switch-to-import').show();
+	$('#switch-to-google').hide();
 }
 
 function infoCallback(map, marker, id) { 

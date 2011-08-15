@@ -232,7 +232,13 @@ RwUserRoute:
       fixed: false
       unsigned: false
       notnull: true
-      primary: false      
+      primary: false
+    file:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false            
   relations:
     SfGuardUser:
       local: user_id
