@@ -53,7 +53,9 @@ EOF;
     $roadworks = array();
     $rwByUser = array();
 
-	$roadworks = array_merge($roadworks, call_user_func($mySource->type . "Collection::loadSource", $mySource));
+    fileManager::backupFile($mySource);
+
+	  $roadworks = array_merge($roadworks, call_user_func($mySource->type . "Collection::loadSource", $mySource));
 
     $this->getDeletedRoadworks (date("Y-m-d H:i:s", $inittime), &$roadworks, $mySource->id);
 

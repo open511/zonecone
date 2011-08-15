@@ -55,6 +55,10 @@
 				}
 			} 	
 			
+			 if (sfContext::getInstance()->getRouting()->getCurrentRouteName() == "routes_new"){
+				echo "showAskGoogle();";
+			}		
+			
 
 
 			//}

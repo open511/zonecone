@@ -14,12 +14,13 @@ class routesActions extends sfActions
   {
     $this->rw_user_routes = Doctrine_Core::getTable('RwUserRoute')->getTableByParameter('user_id', $this->getUser()->getGuardUser()->getId());
     $this->rw_roadworks = array();
-	foreach  ($this->rw_user_routes as $rw_user_route){
-		//echo "J'ai la route " . $rw_user_route->getId() . "<br/>";
-		$count = Doctrine_Core::getTable('RwRoadwork')->countRwNear($rw_user_route->getGeom());
-		$this->rw_roadworks[$rw_user_route->getId()] = $count[0];
+	  foreach  ($this->rw_user_routes as $rw_user_route){
+		  //echo "J'ai la route " . $rw_user_route->getId() . "<br/>";
+		  $count = Doctrine_Core::getTable('RwRoadwork')->countRwNear($rw_user_route->getGeom());
+		
+		  $this->rw_roadworks[$rw_user_route->getId()] = $count[0];
 
-	}
+	  }
 
 
     if ($request->isXmlHttpRequest()){    
@@ -32,13 +33,13 @@ class routesActions extends sfActions
   {
 //TODO : il faudrait un token pour accéder à une route plutôt que d'utiliser l'id direct...
 //TODO : vraiment pas clean ici. Il faudrait récupérer seulement 1 user_route et non un array... ça fait faire des traitement illogiques
-	 $this->rw_user_routes = Doctrine_Core::getTable('RwUserRoute')->getTableWithGeom($request->getParameter('id'));
+	  $this->rw_user_routes = Doctrine_Core::getTable('RwUserRoute')->getTableWithGeom($request->getParameter('id'));
 
-     $this->forward404If($this->rw_user_routes[0]->getUserId() != $this->getUser()->getGuardUser()->getId());
+    $this->forward404If($this->rw_user_routes[0]->getUserId() != $this->getUser()->getGuardUser()->getId());
 
-	 $this->roadworks = Doctrine_Core::getTable('RwRoadwork')->getRwNear($this->rw_user_routes[0]->getGeom());
+	  $this->roadworks = Doctrine_Core::getTable('RwRoadwork')->getRwNear($this->rw_user_routes[0]->getGeom());
 
-     $this->forward404Unless($this->rw_user_routes);
+    $this->forward404Unless($this->rw_user_routes);
   }
 
   public function executeNew(sfWebRequest $request)
@@ -101,13 +102,21 @@ class routesActions extends sfActions
     {
     	$myGeom = $form->getGeom();
     	
+
+
 //TODO : rendre l'nsemble de la transaction d'un bloc avec un commit()
 	   $form->unsetGeom();
-      $roadwork = $form->save();   
+      $route = $form->save();   
 
-		$t = Doctrine_Core::getTable('RwUserRoute')->updateGeometry($myGeom, $roadwork->getId());
+			if (strlen($route->getFile())){
+				//We have a file the geom, we'll have to look for the geom in the file... current geom value is dummy
+				$myGeom = manageGeomFile::getGeom($route->getFile());
+				
+			}
 
-      $this->redirect('routes/show?id='.$roadwork->getId());
+		$t = Doctrine_Core::getTable('RwUserRoute')->updateGeometry($myGeom, $route->getId());
+
+      $this->redirect('routes/show?id='.$route->getId());
     }
 
     
