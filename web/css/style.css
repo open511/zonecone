@@ -3,45 +3,76 @@
 /* General */
 a { color: #5A7F85; }
 div.container { overflow: hidden; margin: 40px auto; width: 960px; }
-h2 { font-weight: bold; font-size: 22px; color: #000000; margin: 0 0 0.81em; line-height: 1.62em; }
-h4 { font-weight: bold; font-size: 14px; color: #000000; margin: 0 0 0.81em; line-height: 1.62em; }
-p { font-size: 14px; color: #404040; margin: 0 0 0.81em; line-height: 1.25em}
+h2 { font-weight: bold; font-size: 16px; color: #404040; margin: 0 0 0.81em; line-height: 1.62em; }
+h4 { font-weight: bold; font-size: 14px; color: #404040; margin: 0 0 0.81em; line-height: 1.62em; }
+p { font-size: 12px; color: #404040; margin: 0 0 0.81em; line-height: 1.25em}
+img {margin: 0, padding: 0} 
+
 
 /* Header */
-#header { background: #000 url('images/header_bg.gif') repeat-x left bottom; height: 30px; width: 100%;}
-#header h1 { line-height: 1; float: left; margin: 20px 0 0 0; font-size: 28px; font-weight: bold; color: #FFFFFF; }
-#header h1 a { line-height: 1; float: left; margin: 0; font-size: 28px; font-weight: bold; color: #FFFFFF; }
+#header { background: #FFF; border-bottom: 1px solid #ccc;}
+#header h1 { line-height: 1; float: left; margin: 10px 0 0 0; font-size: 20px; font-weight: bold; color: #555; }
+#header h1 a { line-height: 1; float: left; margin: 0; font-size: 20px; font-weight: bold; color: #555; }
 #header h1 a:hover { text-decoration: none; }
 #header h1 span { font-size: 18px; font-weight: bold; color: #ADBFC2; }
 #header h1 span.beta { font-size: 18px; color: #FF5555; }
 #header p { float: left; line-height: 1; margin: 20px 0 0 10px; font-size: 18px; color: #D6DFE1; position: relative; bottom: -8px;  }
 
-#title {width: 100%; padding: 5px;}
-#menu { width: 98%; background-color: #444; margin: 53px 10px 3px 3px; padding: 1px;}
-#logo {float:left; margin: 0; padding: 0 15px 0 15px; background: #000}
+#menu { width: 100%; background-color: #eee; margin: 0px; padding: 0px; text-align: center; height: 23px;
+  border-bottom: 1px solid #ccc;
+}
 
-#m-routes {float: left;}
-#m-notif {float: left;}
-#m-new {float: left;}
-#logout{float: right;}
-#options {float: right;}
-#who {float: right;}
-#login {float: right;}
-#apply {float: right;}
+#logo {float:left; margin: 0; padding: 0 15px 0 15px;}
 
-#m-routes, #m-notif, #m-new, #logout, #options, #who, #login, #apply {color: #ADBFC2; padding: 4px 8px; position: relative;}
+#nav {float: right;} 
+.subnav {position: relative; margin: 0; margin: 20px  5px 4px 5px; float: left; color: #ADBFC2}
+.logomo {position: relative; margin: 0; margin: 3px 5px 0 5px; float: left; border:0px }
+
+.text {padding: 10px 5px;}
+
+#logout, #apply {margin-right: 30px;}
+#logout, #apply, #options, #login, #who {font-weight: bold;}
+
+
+#m-routes, #m-notif, #m-new {float:right; margin: 5px 7px; color: #555}
+#m-routes a, #m-notif a, #m-new a { line-height: 1; margin: 0; font-size: 13px; color: #555; text-decoration:none;}
+
+.explication {
+   margin: 5px 15px;
+}
+
+.explication p {
+   padding-top: 4px;
+   font-size: 12px;
+}
 
 .route {
 	padding: 5px;
-	margin: 2px;
+	margin: 0px;
+        border-bottom: 1px dotted #ccc;
+        border-top: 1px dotted transparent;
 }
 
+
+
+.route:hover {
+  background-color:#ecf0f3;
+
+}
+
+.route h4 a {color: #555;}
+.route h4 {margin:0 0 0 5px } 
 .route p {
 	padding: 2px;
 }
 
 .subroute {
-	margin-left: 10px;
+	margin-left: 15px;
+}
+
+.mini-icon {
+  vertical-align: top;
+  margin-top: -2px;
 }
 
 .infoicon {
@@ -55,34 +86,40 @@ p { font-size: 14px; color: #404040; margin: 0 0 0.81em; line-height: 1.25em}
 
 .formbutton {
 	text-align: right;
+        padding: 20px 0;
 }
+
+.formbutton input{
+        padding: 20px 0;
+}
+
+
 
 .warning {
 	margin: 10px;
 	padding : 10px;
-	background-color: #fcc;
+	background-color: #eee;
 	border-style: solid;
-	border-width: 2px;
-	border-color: #f55;
+	border-width: 1px;
+	border-color: #555;
 	font-weight: bold;
 }
 
 /* Panels */
 div.ui-layout-west { 
-  background: #fff url('/images/bg-west.png') repeat-y;
   overflow: auto; 
-  padding: 20px;
+  padding: 0px;
   float: left;
 }
 
 
 .mainnomap {
-	margin-top: 50px;
-	width: 300px;
+	margin: 70px auto;
+	width: 500px;
 }
 
 
-#panels { padding: 0 0 0 0; overflow: hidden; width: 100%;}
+#panels { padding: 15px 5px; overflow: hidden; width: 95%}
 #panels p { font-size: 12px; color: #000000; }
 #panels div.panel h2 { line-height: 1; font-weight: bold; padding: 5px 0 5px 10px; margin: 0; font-size: 16px; }
 #panels div.panel h2 a.link-text-selected { font-weight: bold; color: #000; }
@@ -119,9 +156,8 @@ div.ui-layout-west {
 
 /* Map */
 div.ui-layout-center { 
-  padding-top: 0px; 
-  width: 60%;
-  float: right;
+  margin: 0 auto;
+  border-left: 1px solid #ccc;
 }
 
 div.ui-layout-south { 
@@ -171,7 +207,6 @@ div.ui-layout-south {
 label
 {
   clear: right;
-  float: right;
   padding-top: 10px;
   padding-right: 20px;
 }

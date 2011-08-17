@@ -59,69 +59,68 @@
 				echo "showAskGoogle();";
 			}		
 			
-
-
-			//}
-
 			?>	
-			
 			});
 		//]]>
 		</script>
-		<title>RoNoMo * Roadwork No More</title>
+		<title>RoNoMo - &Eacute;vitez les chantiers routiers!</title>
 	</head>
 	<body>
 		<div id="header" class="ui-layout-north">
 			<div id="title">
-				<div id="logo"><img src="/images/logo.png" alt="logo"/></div>
-				<h1>
-				<a href="/">RoNoMo<span>.net</span></a>
-			    </h1>
-			    <p>
-				Évitez les chantiers routiers!
-			    </p>
+			  <div id="logo"><img src="/images/logo.png" alt="logo"/></div>
+			  <h1>
+		    	    <a href="/">RoNoMo<span>.net</span></a>
+			  </h1>
 			</div>
-			<div id="menu">
-				<?php if ($sf_user->isAuthenticated()): ?>
-				<div id="m-routes" onclick="showContent('my-routes')">Mes Trajets</div>
-				<div id="m-notif" onclick="showContent('my-notif')">Mes Notifications</div>
-				<div id="m-new" onclick="showContent('new-route');">Nouveau Trajet</div>
+                        <div id="nav">
+                                <?php if ($sf_user->isAuthenticated()): ?>
+                                  <div class="subnav" id="who"> Connect&eacute;: <?php echo $sf_user->getGuardUser()->getUsername(); ?></div>
+                                  <div class="subnav" id="options"><a href="/settings">Options</a></div>
+                                  <div class="subnav" id="logout"><a href="/logout">Se Déconnecter</a></div>
+                                <?php else: ?>
+                                        <div class="subnav" id="login"><a href="/login">Se connecter</a></div>
+                                        <div class="subnav" id="apply"><a href="/apply">Cr&eacute;er un compte</a></div>
+                                <?php endif; ?>
 
-				<div id="logout"><a href="/logout">Se Déconnecter</a></div>
-				<div id="options"><a href="/settings">Options</a></div>
-				<div id="who"> Connect&eacute;:	<?php echo $sf_user->getGuardUser()->getUsername(); ?></div>
-				<?php else: ?>
-					<div id="login"><a href="/login">Se connecter</a></div>
-					<div id="apply"><a href="/apply">Cr&eacute;er un compte</a></div>
-				<?php endif; ?>
-			</div>
+
+                                <div class="subnav"><a href="/about">&Agrave; propos</a></div>
+                                <div class="subnav"><a href="/terms">Conditions d'utilisation</a></div>
+                                <div class="subnav"><a href="/data">Donn&eacute;es et couverture</a></div>
+                                <div class="subnav"><a href="/faq">FAQ</a></div>
+                                <div class="logomo"><a href="http://montrealouvert.net/donnees-ouvertes-questions-frequemment-demandees/?lang=fr">
+                                  <img src="/images/horizontal-logo-francais.png" alt="Logo Montreal Ouvert"/></a>
+                                </div>
+                        </div>
 
 		</div>
 		<div class="ui-layout-west">
+                                <?php if ($sf_user->isAuthenticated()): ?>
+                        <div id="menu">
+                                <div id="m-routes"><a href="#routes" onclick="showContent('my-routes')">Trajets</a></div>
+                                <div id="m-notif"> <a href="#notif" onclick="showContent('my-notif')">Notifications</a></div>
+                                <div id="m-new"><a href="#new"  onclick="showContent('new-route');">Nouveau Trajet</a></div>
+                                
+                        </div>
+                       <?php endif; ?>
+ 
+
 			<div id="panels">
 				<?php if ($sf_user->isAuthenticated() == 1 ): ?>
 				<div class="panel" id ="new-route">
-					<div class="content">
-					</div>
 				</div>
 				<div class="panel" id="my-routes">
-					<div class="content">
-					</div>
 				</div>
 				<div class="panel" id="my-notif">
-					<div class="content">
-					</div>
 				</div>
 				<?php endif; ?>
 				<div class="panel" id="default">
-					<div class="content">
 						<?php if ($sf_user->isAuthenticated() && sfContext::getInstance()->getRouting()->getCurrentRouteName() == "homepage"){
 								//echo "showContent('my-routes');";
 							} else{
 								echo $sf_content;
 								
 							} ?>
-					</div>
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2011-08-06T15:39:03Z" product-name="messages">
+  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2011-08-17T14:03:44Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
@@ -10,11 +10,11 @@
       </trans-unit>
       <trans-unit id="2">
         <source>Forgot your password?</source>
-        <target>Mot de passe oubli&eacute; ?</target>
+        <target>Mot de passe oublié ?</target>
       </trans-unit>
       <trans-unit id="3">
         <source>Want to register?</source>
-        <target>Cr&eacute;er un compte?</target>
+        <target>Créer un compte?</target>
       </trans-unit>
       <trans-unit id="4">
         <source>Click the button below to change your password. For security reasons, you 
@@ -22,7 +22,7 @@ will receive a confirmation email containing a link allowing you to complete
 the password change. 
 </source>
         <target>Veuillez cliquer sur le bouton ci-dessous pour modifier votre mot de passe.&lt;br/&gt;
-	Pour des raisons de s&eacute;curit&eacute;, nous allons vous envoyer un courriel de v&eacute;rification
+	Pour des raisons de sécurité, nous allons vous envoyer un courriel de vérification
 	vous permettant par la suite de modifier votre mot de passe.</target>
       </trans-unit>
       <trans-unit id="5">
@@ -113,6 +113,26 @@ a link permitting you to change your password if you wish.
       <trans-unit id="25">
         <source>Username or email</source>
         <target>Nom d'utilisateur ou adresse courriel</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Text to go to resent request</source>
+        <target>Mot de passe oublié? Pas de problème! Cliquez sur le bouton ci-dessous pour réinitialiser votre mot de passe.</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Text for password reset request</source>
+        <target>Que vous ayez perdu votre mot de passe ou que vous souhaitiez simplement le modifier, cliquez sur le bouton ci-dessous et votre souhait sera exhaussé. Simple et sécuritaire!</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Autodestruction</source>
+        <target>Auto-destruction</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>[Autodestruction!]</source>
+        <target>[Auto-destruction!] </target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Are you sure? This will delete your account!</source>
+        <target>Êtes vous certain de vouloir poursuivre ? Cette action va supprimer votre compte... pour toujours!</target>
       </trans-unit>
     </body>
   </file>

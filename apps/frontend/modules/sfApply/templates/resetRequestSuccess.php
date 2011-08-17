@@ -2,15 +2,13 @@
 <?php slot('sf_apply_login') ?>
 <?php end_slot() ?>
 <div class="sf_apply sf_apply_reset_request">
+
+<h2><?php echo __("Reset My Password") ?></h2>
+
 <form method="POST" action="<?php echo url_for('sfApply/resetRequest') ?>"
   name="sf_apply_reset_request" id="sf_apply_reset_request">
 <p>
-<?php echo __(<<<EOM
-Forgot your username or password? No problem! Just enter your username <strong>or</strong>
-your email address and click "Reset My Password." You will receive an email message containing both your username and
-a link permitting you to change your password if you wish.
-EOM
-) ?>
+<?php echo __('Text for password reset request'); ?>
 </p>
 <ul>
 <?php echo $form ?>

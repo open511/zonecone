@@ -7,11 +7,6 @@
 
 ?>
 
-<?php if ($sf_user->isAuthenticated()): ?>
-<input type="button" id="switch-to-import" onclick="showImportFile()" value="Importer un fichier (KML, etc.)">
-<input type="button" id="switch-to-google" onclick="showAskGoogle()" value="Tracer votre trajet">
-<?php endif;?>
-
 <form class="ui-form" action="<?php echo url_for('routes/'.($form->getObject()->isNew() ? 'create' : 'update').(!$form->getObject()->isNew() ? '?id='.$form->getObject()->getId() : '')) ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
 
 	<?php 
@@ -23,9 +18,8 @@
 
 		$form->setWidget('distance_within',new sfWidgetFormInputHidden());
 		$form->setWidget('name',new sfWidgetFormInputHidden());
-	  }
-
-
+                $form->setWidget('file',new sfWidgetFormInputHidden());
+          }
 	  
 	  if (!$widget->isHidden()){
 	    echo "\n<p id='input_". $widget->renderId() ."'><strong>" . $widget->renderLabel()  . "<br/></strong>";

@@ -19,12 +19,10 @@ class routesActions extends sfActions
 		  $count = Doctrine_Core::getTable('RwRoadwork')->countRwNear($rw_user_route->getGeom());
 		
 		  $this->rw_roadworks[$rw_user_route->getId()] = $count[0];
-
 	  }
 
-
     if ($request->isXmlHttpRequest()){    
-      return $this->renderPartial('routes/index', array('rw_user_routes' => $this->rw_user_routes, 'rw_roadworks' => $this->rw_roadworks ));
+      return $this->renderPartial('routes/index', array('rw_user_routes' => $this->rw_user_routes, 'rw_roadworks' => $this->rw_roadworks));
     }
           
   }

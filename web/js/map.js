@@ -374,7 +374,7 @@ function init(minLat, minLon, maxLat, maxLon) {
    
     $('body').layout({ defaults: { spacing_open: 0 },
                        applyDefaultStyles: true,
-                       west: { size: 400 },
+                       west: { size: 375},
                        north: { innerHeight: 30 },
                        center: { onresize_end: function () { google.maps.event.trigger(map, "resize"); } } });
     map.fitBounds(bb);
