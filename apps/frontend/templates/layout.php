@@ -4,8 +4,8 @@
 	<head>
 		<?php include_http_metas() ?>
 		<?php include_metas() ?>
-		<?php //include_title() ?>
-		<link rel="shortcut icon" href="/favicon.ico" /><?php include_stylesheets() ?>
+                <link rel="shortcut icon" type="image/png" href="http://ronomo.net/favicon.png" />
+                <?php include_stylesheets() ?>
 		<script type="text/javascript">
 //<![CDATA[
 
