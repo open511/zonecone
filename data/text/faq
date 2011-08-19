@@ -1,0 +1,104 @@
+
+
+<h2>Foire aux questions</h2>
+
+<ul>
+<li><a href="#questce">Qu'est-ce que RoNoMo ?</a></li>
+<li><a href="#queveutdire">Que veut dire RoNoMo ?</a></li>
+<li><a href="#marchepas">Que faire si RoNoMo ne fonctionne pas ?</a></li>
+<li><a href="#affiliation">Êtes-vous affilié à la Ville de Montréal ou au Ministère des transports du Québec ?</a></li>
+<li><a href="#sources">D'où viennent les données utilisées ?</a></li>
+<li><a href="#fiabilite">Quelle est la fiabilité des données ?</a></li>
+<li><a href="#manip">Est-ce que RoNoMo intervient sur les données publiées ?</a></li>
+<li><a href="#nuit">Qu'est-ce qui est défini comme un chantier de nuit ?</a></li>
+<li><a href="#severite">Comment est définie la sévérité d'un chantier ?</a></li>
+<li><a href="#limites">Imposez-vous une limite d'utilisation de RoNoMo ?</a></li>
+<li><a href="#nouvellesources">Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de RoNoMo ?</a></li>
+<li><a href="#join">RoNoMo est un site exceptionnel mais il manque beaucoup de fonctionnalité et des informations sont fausses, comment aider ?</a></li>
+</ul>
+
+<hr/>
+
+
+<div class="faq"><a name="questce"></a>
+<h3>Qu'est-ce que RoNoMo ?</h3>
+<p>RoNoMo est une application web visant à fournir des informations sur les travaux routiers touchant le réseau provincial québécois et les rues de la Ville de Montréal.</p>
+</div>
+
+<div class="faq"><a name="queveutdire"></a>
+<h3>Que veut dire RoNoMo ?</h3>
+<p>RoNoMo est un presque-acronyme pour Roadwork No More. C'était surtout un nom de domaine disponible, facile à retenir et relativement court!</p>
+</div>
+
+
+<div class="faq"><a name="marchepas"></a>
+<h3>Que faire si RoNoMo ne fonctionne pas</h3>
+<p>Pour l'heure les questions, remarques et insultes se font par <a href="/contact">courriel</a>.</p>
+</div>
+
+<div class="faq"><a name="affiliation"></a>
+<h3>Êtes-vous affilié à la Ville de Montréal ou au Ministère des transports du Québec?</h3>
+<p>Non. RoNoMo est une initiative personnelle, l'auteur a absolument aucun contact avec les services en charge des travaux à la Ville ou au MTQ. Il serait surement intéressant d'établir des liens avec ces organismes mais pour l'heure ce n'est pas le cas.</p>
+</div>
+
+<div class="faq"><a name="sources"></a>
+<h3>D'où viennent les données utilisées ?</h3>
+<p>Voir la <a href="/data">page dédiée</a> à cette question</p>
+</div>
+
+<div class="faq"><a name="fiabilite"></a>
+<h3>Quelle est la fiabilité des données ?</h3>
+<p>C'est la grande question! C'est très difficile à déterminer puisqu'il faudrait aller voir individuellement chacun des chantiers. L'utilisateur assidu remarquera cependant des incongruités comme des chantiers qui apparaissent et disparaissent au gré des journées et ce malgré des descriptifs de chantier mentionnant une entrave permanente pour une longue durée.</p>
+
+<p>Voilà pourquoi l'ajout d'un module permettant de commenter les chantiers est au programme: l'observation des usagers de la route semble actuellement nécessaire pour préciser les informations obtenues.</p>
+ 
+<p>Par ailleurs beaucoup d'informations précises sont formulées textuellement ce qui rend difficile l'automatisation du traitement. Par exemple seules les dates de début et de fin sont actuellement disponibles de manière claire, les heures exactes de travaux demeurant nettement plus difficile à extraire.</p>
+</div>
+
+<div class="faq"><a name="manip"></a>
+<h3>Est-ce que RoNoMo intervient sur les données publiées ?</h3>
+<p>Oui et non. Aucune modification n'est faite sur les données sources, mais certaines informations sont ajoutées. Le code derrière RoNoMo essaie d'extraire autant que possible toutes les informations: date de début et de fin, description, type d'entrave, etc.</p>
+<p>Cependant d'autres éléments n'existent simplement pas au niveau des sources comme la sévérité de l'entrave ou le fait que des travaux sont fait de nuit. Pour ceux deux éléments donc, l'information est ajoutée manuellement sur base des descriptions disponibles.</p>
+</div>
+
+<div class="faq"><a name="nuit"></a>
+<h3>Qu'est-ce qui est défini comme un chantier de nuit ?</h3>
+<p>Grosso modo, le chantier doit se dérouler entre 22h et 6h la semaine et entre 22h et 8h la fin de semaine.</p>
+</div>
+
+<div class="faq"><a name="severite"></a>
+<h3>Comment est définie la sévérité d'un chantier ?</h3>
+<p>La sévérité est une note attribuée par RoNoMo pour essayer de rendre plus lisibles les cartes et les (souvent longues) listes de travaux. C'est hautement subjectif mais suit tout de même les grandes règles suivantes:
+<ol><li>Un chantier est considéré bloquant quand il implique une fermeture complète de rue, de route ou d'un accès (bretelle, sortie).</li>
+<li>Un chantier est considéré gênant lorsqu'il implique une fermeture de voie, une circulation en alternance ou résulte d'une manière ou d'une autre dans la limitation du flot automobile,</li>
+<li>Un chantier est considéré comme non-gênant lorsqu'il n'implique pas d'entrave directe du flot de circulation mais peut affecter par exemple le stationnement.</li></ol>
+<p>Cette sévérité est définie manuellement sur base des descriptions des chantiers. Elle peut évoluer dans le temps ce qui rend son évaluation assez difficile.</p>
+<p>La sévérité ne prend pas en compte le contexte. Il est certain que la fermeture d'une petite rue résidentielle n'a pas la même gravité qu'une fermeture d'autoroute mais ce n'est pas un critère pris en compte. C'est à l'utilisateur, souvent habitué à circuler dans les zones en question, de déterminer l'impact d'un chantier.</p>
+</div>
+
+<div class="faq"><a name="limites"></a>
+<h3>Imposez-vous une limite d'utilisation de RoNoMo ?</h3>
+<p>Tel qu'exprimé dans les <a href="/terms">conditions d'utilisation</a>, RoNoMo peut limiter l'utilisation du service, voire bloquer certains utilisateurs. Deux causes à cela :</p>
+<ol><li>Les ressources (serveurs, bande passante) ne sont pas illimités, malheureusement... </li>
+<li>L'API Google Maps impose des limites d'utilisation qui peuvent avoir des effets sur différentes fonctionnalités du site, notamment le "direction renderer" qui permet de tracer un trajet sur la carte. À l'instant où sont écrites ces lignes, les seuils exacts de ces limitations et surtout les impacts en cas de dépassement ne sont pas clairement connus et Google tarde à répondre aux questions. Par ailleurs, les conditions d'utilisation de ces API sont vouées à changer au mois d'octobre sans que les détails du fonctionnement futur ne soient connus.</li></ol>
+</div>
+
+<div class="faq"><a name="nouvellesources"></a>
+<h3>Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de RoNoMo ?</h3>
+<p>Oui mais ce n'est pas évident. RoNoMo a été développé de manière à facilement pouvoir ajouter des sources de données. Cela prend cependant une source répondant aux critères suivants</p>
+<ol><li>Disponible de manière ouverte</li>
+<li>Dans un format structuré</li>
+<li>N'interdisant pas explicitement la réutilisation des données</li>
+<li>Contenant des données géolocalisées</li></ol>
+<p>De nombreuses villes et organismes publient de l'information par divers biais (page web, fil RSS, twitter, pdf, etc.) mais l'information est purement textuelle et non structurée. Ce qui manque le plus souvent sont les informations de géolocalisation (longitude et latitude) permettant de placer les travaux sur une carte.</p>
+<p>L'idéal demeure un format fixe (format CSV comme le MTQ) ou un langage de présentation structuré comme le XML ou ses dérivés (la Ville de Montréal utilise du VGML).</p>
+<p>Si vous avez des sources d'informations de travaux routiers correspondants aux éléments énoncés, vous pouvez les soumettre en nous <a href="/contact">contactant</a>.</p>
+</div>
+
+<div class="faq"><a name="join"></a>
+<h3>RoNoMo est un site exceptionnel mais il manque de nombreuses de fonctionnalités et des informations sont fausses, comment aider ?</h3>
+
+<p>Vous pouvez aider de deux façons :
+<ol><li>En remontant de l'information sur les travaux. Si vous utilisez une route quotidiennement, vous pouvez remonter si des informations erronnée ou manquantes concernent des travaux. Dans un premier cela va se faire uniquement par <a href="/contact">courriel</a>, mais il devrait être possible d'améliorer cela dans les mois à venir</li>
+<li>Si vous avez des connaissances dans le développement web, notamment PHP, PostgreSQL, PostGIS, Symfony, le javascript et bien entendu le HTML et CSS, votre aide sera très précieuse pour améliorer le site.</li></ol>
+</div>

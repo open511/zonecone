@@ -1,0 +1,45 @@
+
+
+<div class="faq">
+<h2>À propos de RoNoMo</h2>
+<p>RoNoMo est une initiative personnelle qui se place dans le cadre du mouvement de données ouvertes et plus particulièrement dans la lignée de Montréal Ouvert, un organisme visant à promouvoir l'ouverture des données gouvernementales à l'échelle de Montréal. Vous pouvez consulter le site de <a href="http://montrealouvert.net/">Montréal Ouvert</a> pour comprendre ce qu'englobent les données ouvertes et quelle est l'utilité de ce mouvement.</p>
+
+<p>En tant que nouvel automobiliste (et peu assidu à vrai dire), il a semblé impensable à l'auteur d'être totalement démuni devant les embouteillages que créés si facilement les travaux routiers. Suite à une recherche rapide, il s'est trouvé que les données de base sur la présence des chantiers existait mais était inutilisable: comment voir rapidement, parmi des dizaines de chantiers, lesquels sont réellement gênant pour un trajet. C'est de là qu'est né l'idée de RoNoMo.</p>
+
+<p>Les objectifs spécifiques de RoNoMo sont les suivants :</p>
+<ol><li>Souligner l'existence de données issues des orgarnismes gouvernementaux sur les travaux routiers. Cela permet entre autres de noter que le Ministère des transports et le Ville de Montréal mettent à disposition des usagers de la route des informations pertinentes (voir la page sur les <a href="/data">sources de données</a>).</li>
+<li>Les travaux routiers, surtout par les temps qui courent, dégradent fortement la qualité de vie en créant du stress. Cependant l'entretien des infrastructure routière semble inévitable. RoNoMo a pour vocation de servir de concept: comment simplifier la vie des usagers de la route et limiter frustrations et embouteillages.</li>
+<li>Évidemment si le site rencontre un certain succès, cela se vaudra également de démonstration auprès des gouvernements et du public sur la pertinence d'ouvrir les données (qui en soit n'est qu'un premier pas dans la bonne direction).</li>
+<li>C'est un premier pas vers une évolution des pratiques routières: routes intelligentes, voitures autonomes, systèmes d'information routiers avancés. Tout ceci n'est peut-être pas si loin et se prépare aujourd'hui!</li></ol>
+
+<p><b>Note importante</b>: La connaissance des chantiers est un moyen, assez marginal, pour améliorer la qualité du transport au Québec. Il n'en reste pas moins que le fait de laisser sa voiture à la maison ou dans un stationnement incitatif reste le meilleur moyen de décongestionner les routes et ultimement d'avoir une meilleure qualité de vie. Alors avant de vous demander comment éviter un chantier, demandez-vous comment vous pouvez éviter de prendre votre voiture!</p>
+</div>
+
+<div class="faq">
+
+<h2>RoNoMo: la plateforme technologique</h2>
+
+<p>Pour ceux curieux de l'aspect technique, RoNoMo utilise le "framework" Open source <a href="http://www.symfony-project.org">Symfony</a> et est donc développé en PHP. La gestion des données géographiques se fait à l'aide du module <a href="http://postgis.refractions.net/">PostGIS</a> installé sur une base de donnée <a href="http://www.postgresql.org/">PostgreSQL</a>. Comme cela est visible, l'affiche géographique se fait à l'aide de l'<a href="http://code.google.com/intl/fr/apis/maps/index.html">API Google Maps</a>.<p>
+
+<p>Rien d'exceptionnel dans tout ceci, et c'est d'ailleurs un point important dans la logique des données ouvertes: Le nombre, la qualité et l'accessibilité pour les novices d'outils gratuits permettant de manipuler et d'afficher de l'information a fortement progressé au cours des dernières années. Dans certains cas, cela prend quelques connaissances de base en développement, mais ensuite l'information est disponible à tous.</p>
+</div>
+
+
+<div class="faq">
+<h2>Vous voulez participer ?</h2>
+<p>Dans son état actuel, RoNoMo est juste un concept mais il serait possible de faire nettement plus: ajouter la capacité pour les utilisateurs de commenter ou de noter les travaux, rendre le site plus accessibles aux applications mobiles, supporter l'anglais comme langue d'affichage, étendre la couverture géographique (d'autres provinces ont des données similaires), amélioration de l'API et sa documentation, etc.</p>
+
+<p>Si vous avez des connaissances dans les technologies présentées, faites-moi signe, il y a de la place à amélioration.</p>
+</div>
+
+
+<div class="faq">
+<h2>Merci!</h2>
+<p>Merci à William Lachance qui a mis à disposition une <a href="http://masalalabs.ca/2011/06/template-for-a-map-based-web-app/">structure de base pour gérer la carte et l'API Google Map</a>. Merci également aux personnes qui ont accepté de regarder le site dans ses premières ébauches et de fournir des commentaires. N'étant pas un expert des pratiques web, cela m'a grandement servi (bien qu'il reste encore du chemin à faire!). Merci aussi à ma femme qui m'a permis d'investir le temps nécessaire à ce développement.</p>
+</div>
+
+<div class="faq">
+<h2>L'auteur</h2>
+
+<p>Stéphane Guidoin: Je gravite autour du monde web depuis le milieu des années 90 sans pour autant y travailler. J'ai commencé à contribué au mouvement des données ouvertes en 2007 avec la mise en place du site <a href="http://civicaccess.ca/">Accès Civique.ca</a> qui est maintenant une liste de diffusion très active sur les questions de données ouvertes et de gouvernance à l'ère des technologies de l'information.</p>
+</div>
