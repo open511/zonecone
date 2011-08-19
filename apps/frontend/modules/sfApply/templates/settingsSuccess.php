@@ -30,6 +30,8 @@
 <form method="GET" action="<?php echo url_for("sfApply/resetRequest") ?>" name="sf_apply_reset_request" id="sf_apply_reset_request">
 <input type="submit" value="<?php echo __("Reset Password") ?>" />
 </form>
+
+<p>&nbsp;</p>
 </div>
 
 

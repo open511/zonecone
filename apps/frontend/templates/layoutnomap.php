@@ -88,11 +88,12 @@
                                         <div class="subnav" id="apply"><a href="/apply">Cr&eacute;er un compte</a></div>
                                 <?php endif; ?>
 
-
                                 <div class="subnav"><a href="/about">&Agrave; propos</a></div>
-                                <div class="subnav"><a href="/terms">Conditions d'utilisation</a></div>
-                                <div class="subnav"><a href="/data">Donn&eacute;es et couverture</a></div>
+                                <div class="subnav"><a href="/terms">Utilisation</a></div>
+                                <div class="subnav"><a href="/data">Donn&eacute;es</a></div>
                                 <div class="subnav"><a href="/faq">FAQ</a></div>
+                                <div class="subnav"><a href="/contact">Contact</a></div>
+
                                 <div class="logomo"><a href="http://montrealouvert.net/donnees-ouvertes-questions-frequemment-demandees/?lang=fr">
                                   <img src="/images/horizontal-logo-francais.png" alt="Logo Montreal Ouvert"/></a>
                                 </div>

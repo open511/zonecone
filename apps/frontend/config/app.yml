@@ -5,6 +5,8 @@
 #all:
 
 all:
+  text_files: "/srv/www/RoNoMo/data/text" 
+
   sf_guard_plugin:
     remember_key_expiration_age:  2592000   # 30 days in seconds
     remember_cookie_name:         roadwork
