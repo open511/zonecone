@@ -107,6 +107,12 @@ class RwRoadworkTable extends sfMapFishTable
 		  ->select('*')
         ->from('rwRoadwork')
         ->where('ST_DWithin(ST_GeomFromText(\''. $geom .'\', 4326), geom,  0.002)');
+
+
+      $q->andWhere("date_trunc('day', \"start_date\") <= CURRENT_DATE OR start_date IS NULL")
+        ->andWhere("date_trunc('day', \"end_date\") >= CURRENT_DATE OR end_date IS NULL")
+        ->andWhere("is_active = true OR is_uncertain = true");
+
 	     
 	   return $q->execute();     
 	 }	 	 

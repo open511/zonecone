@@ -99,4 +99,27 @@ class RwRoadwork extends BaseRwRoadwork
    
      return $publicArray;    
  }
+
+
+  public function getFormattedStartDate(){
+                if (is_null($this->getStartDate())){
+                        $startDate = $this->getStartDateText();
+                } else {
+                        //DateTime object seems not to support fr locale, so we have to go thru strftime
+                        $startDate = strftime('%e %B %Y', $this->getDateTimeObject('start_date')->format('U'));
+                }
+
+    return $startDate;
+
+  }
+
+  public function getFormattedEndDate(){
+
+                if (is_null($this->getEndDate())){
+                        $endDate = $this->getEndDateText();
+                } else {
+                         $endDate = strftime('%e %B %Y', $this->getDateTimeObject('end_date')->format('U'));
+                }
+    return $endDate;
+  }
 }

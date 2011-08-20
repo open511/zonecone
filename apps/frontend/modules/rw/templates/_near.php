@@ -21,7 +21,8 @@ else{echo "<h2>$nbrw chantiers &agrave; proximit&eacute;</h2>";}
 	if (is_null($roadwork->getStartDate())){
 		$startDate = $roadwork->getRaw('start_date_text');
 	} else {
-		$startDate = $roadwork->getStartDate();		
+		//$startDate = $roadwork->getDateTimeObject('start_date')->format('F');		
+                 $startDate = strftime("%B");
 	}
 	
 	if (is_null($roadwork->getEndDate())){
@@ -37,4 +38,6 @@ else{echo "<h2>$nbrw chantiers &agrave; proximit&eacute;</h2>";}
 	     <?php if (!is_null($startDate)) : ?><b>D&eacute;but:</b>  <?php echo $startDate ?></br><?php endif;?>
 	     <?php if (!is_null($startDate)) : ?><b>Fin:</b>  <?php echo $endDate ?><?php endif;?></p>
     </div>
-    <?php endforeach; ?>    
+    <?php endforeach; ?>   
+
+ 

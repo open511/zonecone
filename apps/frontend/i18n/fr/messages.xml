@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2011-08-17T14:03:44Z" product-name="messages">
+  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2011-08-18T21:59:51Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
@@ -134,6 +134,15 @@ a link permitting you to change your password if you wish.
         <source>Are you sure? This will delete your account!</source>
         <target>Êtes vous certain de vouloir poursuivre ? Cette action va supprimer votre compte... pour toujours!</target>
       </trans-unit>
+      <trans-unit id="31">
+        <source>After Reset Request</source>
+        <target>Un courriel a été envoyé à l'adresse lié à votre compte. Vous y trouverez un lien vous permettant de modifier votre mot de passe en toute sécurité. Assurez-vous juste que ce courriel ne soit pas attrapé par votre filtre anti-spam!</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Continue</source>
+        <target>Continuer</target>
+      </trans-unit>
+
     </body>
   </file>
 </xliff>

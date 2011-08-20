@@ -12,6 +12,7 @@
 <li><a href="#manip">Est-ce que RoNoMo intervient sur les données publiées ?</a></li>
 <li><a href="#nuit">Qu'est-ce qui est défini comme un chantier de nuit ?</a></li>
 <li><a href="#severite">Comment est définie la sévérité d'un chantier ?</a></li>
+<li><a href="#uncertain">Qu'est-ce qu'un chantier au statut incertain ?</a></li>
 <li><a href="#limites">Imposez-vous une limite d'utilisation de RoNoMo ?</a></li>
 <li><a href="#nouvellesources">Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de RoNoMo ?</a></li>
 <li><a href="#join">RoNoMo est un site exceptionnel mais il manque beaucoup de fonctionnalité et des informations sont fausses, comment aider ?</a></li>
@@ -75,6 +76,13 @@
 <p>Cette sévérité est définie manuellement sur base des descriptions des chantiers. Elle peut évoluer dans le temps ce qui rend son évaluation assez difficile.</p>
 <p>La sévérité ne prend pas en compte le contexte. Il est certain que la fermeture d'une petite rue résidentielle n'a pas la même gravité qu'une fermeture d'autoroute mais ce n'est pas un critère pris en compte. C'est à l'utilisateur, souvent habitué à circuler dans les zones en question, de déterminer l'impact d'un chantier.</p>
 </div>
+
+<div class="faq"><a name="uncertain"></a>
+<h3>Qu'est-ce qu'un chantier au statut incertain ?</h3>
+<p>Un chantier est marqué comme étant incertain lorsqu'une incohérence est notée entre certains éléments d'un chantier. Par exemple si un chantier disparait des données sources (ce qui est généralement le signe que le chantier est inactif) mais que la description prévoyait explicitement des travaux pour la journée courante, le chantier est marqué comme incertain. Cette opération est manuelle.</p>
+
+</div>
+
 
 <div class="faq"><a name="limites"></a>
 <h3>Imposez-vous une limite d'utilisation de RoNoMo ?</h3>
