@@ -24,12 +24,13 @@ test:
 
 all:
   .settings:
+
     # Form security secret (CSRF protection)
     csrf_secret:            e3249e18a91b698dd9c2a5909a7369f3114a1c18
 
     # Output escaping settings
-    escaping_strategy:      true
-    escaping_method:        ESC_SPECIALCHARS
+    escaping_strategy:      true 
+    escaping_method:        ESC_RAW 
 
     # Enable the database manager
     use_database:           true
@@ -40,7 +41,7 @@ all:
     
     # Internationalization
     i18n: on  
-    default_culture: fr_CA.utf8 
+    default_culture: fr_CA 
     charset: utf-8
     
   .actions:

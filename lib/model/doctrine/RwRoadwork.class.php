@@ -27,6 +27,19 @@ class RwRoadwork extends BaseRwRoadwork
    'error'  => 'e'
  );
 
+ static public $rwSeverityTextEnum= array(
+    1 => 'BLOQUANT',
+    2 => 'GÊNANT',
+    3 => 'NON GÊNANT',
+ );
+
+ static public $rwSeverityColorEnum= array(
+    1 => '822',
+    2 => 'dA0',
+    3 => '091',
+ );
+
+
  public $wasNew = false;
  public $rwStatus;  //must be a value from $rwStatusEnum
  public $updatedFields; 
@@ -68,7 +81,7 @@ class RwRoadwork extends BaseRwRoadwork
 		if (is_null($this->getStartDate())){
 			$startDate = $this->getStartDateText();
 		} else {
-			$startDate = $this->getStartDate();		
+			$startDate = $this->getStartDate();
 		}
 
 		if (is_null($this->getEndDate())){
@@ -82,7 +95,8 @@ class RwRoadwork extends BaseRwRoadwork
 		} else {
 			$severity = $this->getSeverity();
 		}
-		
+
+            $display = $this->getShortDescription();
 
     $publicArray = array(
       'id'           => $this->getId(),
@@ -91,10 +105,15 @@ class RwRoadwork extends BaseRwRoadwork
       'coordinates'  => $coordinates,
       'startDate'	 => $startDate,
       'endDate'	     => $endDate,
+      'startDate'    => $startDate,
+      'endDate'      => $endDate,
+      'startDateText' => $this->getFormattedStartDate(),
+      'endDateText' => $this->getFormattedEndDate(),
       'severity'     => $severity,
-	  'is_active'    => $this->getIsActive(),
-	  'is_night'	 => $this->getIsNight(),
-	  'is_uncertain' => $this->getIsUncertain(),
+      'is_active'    => $this->getIsActive(),
+      'is_night'	 => $this->getIsNight(),
+      'is_uncertain' => $this->getIsUncertain(),
+      'short_display' => $display,
      );
    
      return $publicArray;    
@@ -102,7 +121,11 @@ class RwRoadwork extends BaseRwRoadwork
 
 
   public function getFormattedStartDate(){
-                if (is_null($this->getStartDate())){
+
+                //It might seem crazzy to use the Text value at first. But for Ville de Montreal, I set the timestamp based on the text date
+                //However text date are usually fuzzy like "end of august", so we prefer display the data provided by the source
+                //than a value entered manually to allow SQL query but that might not be accurate
+                if (strlen($this->getStartDateText()) > 0){
                         $startDate = $this->getStartDateText();
                 } else {
                         //DateTime object seems not to support fr locale, so we have to go thru strftime
@@ -115,11 +138,50 @@ class RwRoadwork extends BaseRwRoadwork
 
   public function getFormattedEndDate(){
 
-                if (is_null($this->getEndDate())){
+                if (strlen($this->getEndDate()) > 0){
                         $endDate = $this->getEndDateText();
                 } else {
                          $endDate = strftime('%e %B %Y', $this->getDateTimeObject('end_date')->format('U'));
                 }
     return $endDate;
+  }
+
+  public function getIconName(){
+    $iconName = "";
+    if ($this->getIsActive() == false && $this->getIsUncertain() == false){
+      $iconName .= "inactive";
+    } else {
+      if ($this->getIsNight() == true){
+        $iconName .= "night-";
+      } else{
+        $iconName .= "day-";
+      }
+      if (strlen($this->severity) == 1){
+        $iconName .= $this->getSeverity();
+      } else {
+        $iconName .= "2";
+      }
+      if ($this->getIsUncertain() == true){
+         $iconName .= "-uncertain";
+      }
+    }
+
+    return $iconName;
+  }
+
+  public function getShortDescription(){
+
+     if (strlen($this->restriction) > 20) { $display= $this->restriction; }
+     elseif (strlen($this->description) > 20) { $display= $this->description;}
+     else {$display = "";}
+
+     $display = str_replace("<br/><br/>", "<br/>", $display);
+     $display = strip_tags($display, "<br/>");
+     $display = str_replace("<br/>", "|", $display);
+     $display = substr($display, 0, 120) . "... ";
+     $display = str_replace("|", "<br/>", $display);
+
+     return $display;
+ 
   }
 }

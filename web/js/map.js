@@ -93,6 +93,34 @@ function ajaxToElement (url, targetElement, httpType, insertMode){
 }
 
 
+function getIconName(rw){
+    var iconName = "";
+    if (rw["is_active"] == false && rw["is_uncertain"] == false){
+      iconName += "inactive";
+    } else {
+      if (rw["is_night"] == true){
+        iconName += "night-";
+      } else{
+        iconName += "day-";
+      }
+      if (rw["severity"] > 0 && rw["severity"] < 4){
+        iconName += rw["severity"];
+      } else {
+        iconName += "2";
+      }
+      if (rw["is_uncertain"] == true){
+         iconName += "-uncertain";
+      }
+    }
+
+
+   if (rw["id"] == "1549"){
+     alert(iconName);}
+
+    return iconName;
+}
+
+
 function displayRwOnMap(map){
 
    $.getJSON(jsonUrl,"",
@@ -107,42 +135,20 @@ function displayRwOnMap(map){
 			pointArray.push(points);
 		}
 		
-		var iconName = "day-2"
-		if (data[i]["is_uncertain"] == true){
-		  iconName = "uncertain";
-		}
-		else if (data[i]["is_active"] == false){
-      iconName = "inactive";
-		}else{
-			if (data[i]["is_night"] == true){
-				iconName = "night-";
-			} else {
-				iconName = "day-";
-			}
-			
-			if (data[i]["severity"] > 0 && data[i]["severity"] < 4){
-				iconName += data[i]["severity"];
-			} else{
-				iconName += "2";
-			}
-		}
-		
-		
 		//Display a marker for the first point available
 	   markerArray[data[i]["id"]] = new google.maps.Marker({
    	     position: pointArray[0], 
          map: map,
-         icon: "/images/cone-small-"+ iconName +".png" });
+         icon: "/images/cone-small-"+ getIconName(data[i]) +".png" });
 
        infoWindowContent = "<div class='infowindow'>"
-       infoWindowContent = "<div class='infoicon'><img src='/images/cone-med-"+ iconName +".png' alt='cone'/></div>";
+       infoWindowContent += "<div class='infoicon'><img src='/images/cone-med-"; 
+       infoWindowContent += getIconName(data[i]);
+       infoWindowContent += ".png' alt='cone'/></div>";
        infoWindowContent += "<p><b>";
-       if (data[i]["is_active"] == false){
-	     infoWindowContent +=  "[Inactif] ";
-        }
        infoWindowContent +=  data[i]["name"] + "</b></p>";
-       infoWindowContent += "<p>("+ data[i]["startDate"] +" - "+ data[i]["endDate"] +")";
-       infoWindowContent += " - <a href='/rw/"+ data[i]["id"] +"'>[plus]</a></p>";
+       infoWindowContent += "<p>("+ data[i]["startDateText"] +" - "+ data[i]["endDateText"] +")</p>";
+       infoWindowContent += "<p>" + data[i]["short_display"] +" <a href='/rw/"+ data[i]["id"] +"'>[plus]</a></p>";
        infoWindowContent += "</div>";
 
 //Not clean not to use "url_for" to go to the rw URL

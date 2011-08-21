@@ -205,7 +205,7 @@ class CSVMTQ
   protected function extractName(){
 
 
-setlocale(LC_TIME, "fr_CA.utf8");
+//setlocale(LC_TIME, "fr_CA.utf8");
 	$explodedField = explode(" ", $this->rawData[3]);
 	$this->name = "Chantier sur la route " . $this->roadName . " du ";
 

@@ -1,3 +1,4 @@
+<?php setlocale(LC_ALL, 'fr_CA'); ?>
 <p>&nbsp;</p>
 
 <?php if ($sf_user->isAuthenticated() == false):  ?>
@@ -16,27 +17,16 @@ else{echo "<h2>$nbrw chantiers &agrave; proximit&eacute;</h2>";}
 
     <?php foreach ($roadworks as $roadwork): ?>
 	
-	<?php
-	
-	if (is_null($roadwork->getStartDate())){
-		$startDate = $roadwork->getRaw('start_date_text');
-	} else {
-		//$startDate = $roadwork->getDateTimeObject('start_date')->format('F');		
-                 $startDate = strftime("%B");
-	}
-	
-	if (is_null($roadwork->getEndDate())){
-		$endDate = $roadwork->getRaw('end_date_text');
-	} else {
-		$endDate = $roadwork->getEndDate();		
-	}
-	?> 
-	<div class="route"><p><b><a href="#"  onclick="showMarker(<?php echo $roadwork->getId() ?>)">
-      <?php echo $roadwork->getRaw('name') ?></a></b> 
-      <span ><a href="<?php echo url_for('rw/show?id='.$roadwork->getId()); ?>">[+]</a></span></p>
+	<div class="route">
+      <div class="infoicon"><img src='/images/cone-small-<?php echo $roadwork->getIconName();?>.png' alt='cone'/></div>
+
+<p><b><a href="#"  onclick="showMarker(<?php echo $roadwork->getId() ?>)">
+      <?php echo $roadwork->getRaw('name') ?></a></b></p> 
       <p><?php if (!is_null($roadwork->getRaw('road_name'))) : ?><b>Rues:</b> <?php echo $roadwork->getRaw('road_name') ?></br><?php endif;?>
-	     <?php if (!is_null($startDate)) : ?><b>D&eacute;but:</b>  <?php echo $startDate ?></br><?php endif;?>
-	     <?php if (!is_null($startDate)) : ?><b>Fin:</b>  <?php echo $endDate ?><?php endif;?></p>
+             <?php echo "<p>Début: <b>". $roadwork->getFormattedStartDate() ."</b> <br/>";
+                   echo "Fin: <b>". $roadwork->getFormattedEndDate() ."</b></p>"; ?>
+      <p><?php echo $roadwork->getShortDescription();  ?> <span><a href="<?php echo url_for('rw/show?id='.$roadwork->getId()); ?>"> [plus]</a></span></p>
+
     </div>
     <?php endforeach; ?>   
 

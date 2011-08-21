@@ -35,8 +35,10 @@ class RwRoadworkTable extends sfMapFishTable
       //	$q->addWhere("id = ?", $id);	
       //}
 
-     $q->where("is_active = ?", true)
-        ->orWhere("is_active = false AND date_trunc('day', \"end_date\") >= CURRENT_DATE");
+      $q->andWhere("date_trunc('day', \"start_date\") <= CURRENT_DATE OR start_date IS NULL")
+        ->andWhere("date_trunc('day', \"end_date\") >= CURRENT_DATE OR end_date IS NULL")
+        ->andWhere("is_active = true OR is_uncertain = true");
+
 	     
 	   return $q->execute();     
 	 }

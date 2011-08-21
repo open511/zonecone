@@ -36,7 +36,7 @@ EOF;
   protected function execute($arguments = array(), $options = array())
   {	
     ob_start();
-    setlocale(LC_TIME, "fr_CA.utf8");
+    //setlocale(LC_TIME, "fr_CA.utf8");
 
   	$inittime = microtime(true);
 

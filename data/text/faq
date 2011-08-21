@@ -11,6 +11,7 @@
 <li><a href="#fiabilite">Quelle est la fiabilité des données ?</a></li>
 <li><a href="#manip">Est-ce que RoNoMo intervient sur les données publiées ?</a></li>
 <li><a href="#nuit">Qu'est-ce qui est défini comme un chantier de nuit ?</a></li>
+<li><a href="#inactive">Que qualifiez-vous de chantier inactif ?</a></li>
 <li><a href="#severite">Comment est définie la sévérité d'un chantier ?</a></li>
 <li><a href="#uncertain">Qu'est-ce qu'un chantier au statut incertain ?</a></li>
 <li><a href="#limites">Imposez-vous une limite d'utilisation de RoNoMo ?</a></li>
@@ -65,6 +66,11 @@
 <div class="faq"><a name="nuit"></a>
 <h3>Qu'est-ce qui est défini comme un chantier de nuit ?</h3>
 <p>Grosso modo, le chantier doit se dérouler entre 22h et 6h la semaine et entre 22h et 8h la fin de semaine.</p>
+</div>
+
+<div class="faq"><a name="inactive"></a>
+<h3>Que qualifiez-vous de chantier inactif ?</h3>
+<p>Un chantier inactif est un chantier qui n'a pas atteint sa date de fin mais qui a disparu des données sources sur lesquelles se base RoNoMo. Dans le cas des données du MTQ notamment, cela signifie que le chantier n'est pas actif au moment présent, et donc qu'il ne perturbe pas la circulation.</p>
 </div>
 
 <div class="faq"><a name="severite"></a>

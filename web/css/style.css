@@ -6,7 +6,7 @@ div.container { overflow: hidden; margin: 40px auto; width: 960px; }
 h2 { font-weight: bold; font-size: 16px; color: #404040; margin: 0 0 0.81em; line-height: 1.62em; }
 h4 { font-weight: bold; font-size: 14px; color: #404040; margin: 0 0 0.81em; line-height: 1.62em; }
 p { font-size: 12px; color: #404040; margin: 0 0 0.81em; line-height: 1.25em}
-img {margin: 0, padding: 0} 
+img {margin: 0; padding: 0} 
 
 
 /* Header */
@@ -82,6 +82,14 @@ img {margin: 0, padding: 0}
 }
 
 
+#map_legend{ background: #FFF;}
+
+.sublegend { height: 30px; float: left; padding: 2px 5px; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; margin-bottom: -1px} 
+
+.sublegend img {vertical-align: middle;}
+
+#map_canvas {border-top: 1px solid #ccc;}
+
 .faq, .text {
   padding:10px 0 10px 0; 
   border-bottom: 1px dotted #555 
@@ -104,6 +112,7 @@ img {margin: 0, padding: 0}
 .infoicon {
 	position:relative;
 	float:left;
+        padding-right: 5px;
 }
 
 .form {

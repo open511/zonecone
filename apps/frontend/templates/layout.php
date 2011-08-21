@@ -98,7 +98,7 @@
 		<div class="ui-layout-west">
                                 <?php if ($sf_user->isAuthenticated()): ?>
                         <div id="menu">
-                                <div id="m-routes"><a href="#routes" onclick="showContent('my-routes')">Trajets</a></div>
+                                <div id="m-routes"><a href="#routes" onclick="showContent('my-routes')">Trajets sauvegardés</a></div>
                                 <div id="m-notif"> <a href="#notif" onclick="showContent('my-notif')">Notifications</a></div>
                                 <div id="m-new"><a href="#new"  onclick="showContent('new-route');">Nouveau Trajet</a></div>
                                 
@@ -126,6 +126,16 @@
 			</div>
 		</div>
 		<div class="ui-layout-center">
+                        <div id="map_legend">
+                          <div class="sublegend"><img src="/images/cone-small-day-1.png" alt="Cone small day severity 1"/> Bloquant (jour)</div>
+                          <div class="sublegend"><img src="/images/cone-small-day-2.png" alt="Cone small day severity 2"/>  Gênant (jour)</div>
+                          <div class="sublegend"><img src="/images/cone-small-day-3.png" alt="Cone small day severity 3"/>  Non gênant (jour)</div>
+                          <div class="sublegend"><img src="/images/cone-small-night-1.png" alt="Cone small night severity 2"/> Bloquant (nuit)</div>
+                          <div class="sublegend"><img src="/images/cone-small-night-2.png" alt="Cone small day severity 1"/> Gênant (nuit)</div>
+                          <div class="sublegend"><img src="/images/cone-small-inactive.png" alt="Cone small inactive"/>Inactif</div>
+                          <div class="sublegend"><span style="font-size: 20px; font-weight: bold;">?</span> Incertain</div>
+
+                        </div>
 			<div id="map_canvas"></div>
 		</div>
 	</body>
