@@ -142,7 +142,10 @@ a link permitting you to change your password if you wish.
         <source>Continue</source>
         <target>Continuer</target>
       </trans-unit>
-
+      <trans-unit id="33">
+        <source>Text Apply After Success</source>
+        <target>Merci! Votre compte est créé mais non actif pour le moment. Vous allez recevoir un courriel avec un lien vous permettant d'activer votre compte. Assurez-vous juste que ce courriel ne soit pas attrapé par votre filtre anti-spam!</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

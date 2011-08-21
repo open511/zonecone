@@ -138,7 +138,7 @@ class RwRoadwork extends BaseRwRoadwork
 
   public function getFormattedEndDate(){
 
-                if (strlen($this->getEndDate()) > 0){
+                if (strlen($this->getEndDateText()) > 0){
                         $endDate = $this->getEndDateText();
                 } else {
                          $endDate = strftime('%e %B %Y', $this->getDateTimeObject('end_date')->format('U'));
