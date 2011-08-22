@@ -1,0 +1,4 @@
+show:
+  enabled:     true
+  with_layout: true
+  lifetime:    6400
