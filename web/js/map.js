@@ -114,9 +114,6 @@ function getIconName(rw){
     }
 
 
-   if (rw["id"] == "1549"){
-     alert(iconName);}
-
     return iconName;
 }
 
