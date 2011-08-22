@@ -6,7 +6,7 @@
 <ol>
 <li>Au niveau municipal, les données sont accessibles indirectement sur le site de la ville de Montréal. En d'autres termes, ces données n'ont pas été prévues pour être utilisées de manière directe mais sont affichées sur une carte dans la section <a href="http://ville.montreal.qc.ca/portal/page?_pageid=7097,79001583&_dad=portal&_schema=PORTAL">Info-Travaux</a>. Un rapide travail d'investigation permet de trouver les données sources.<br/>
 
-Selon les recherches effectuées au Québec et dans quelques autres grandes villes canadienne, Montréal semble être une des seules villes à s'être doté d'un système d'information sur les travaux (avec notamment des informations géolocalisées). C'est grâce à ce système que RoNoMo a pu voir le jour.</li>
+Selon les recherches effectuées au Québec et dans quelques autres grandes villes canadienne, Montréal semble être une des seules villes à s'être doté d'un système d'information sur les travaux (avec notamment des informations géolocalisées). C'est grâce à ce système que ZoneCone a pu voir le jour.</li>
 
 <li>Au niveau provinciale, les données viennent du Ministère des transports du Québec et de son service <a href="http://www.quebec511.gouv.qc.ca/">Québec 511</a>. Là aussi le MTQ se démarque de ses homologues canadiens en étant a priori le premier à proposer des <a href="http://www.quebec511.gouv.qc.ca/fr/etat_reseau/gps.asp">données GPS</a> pour la localisation des chantiers. C'est donc un véritable effort d'ouverture des données. Les données GPS manquant de description sur le type de travaux, il est ensuite nécessaire de coupler ces informations avec les pages web dédiées à chacun des chantiers.</li></ol>
 </div>
@@ -47,7 +47,7 @@ C'est un des revers de l'éparpillement municipal...</li>
 <div class="faq">
 <h2>API</h2>
 
-<p>Dans l'esprit d'accessibilité des données propre aux données ouvertes, RoNoMo a été construit autour d'une API au format JSON visant à rendre facilement disponible le jeu de données ainsi consolidé. Cette API est encore partielle et non documentée. Toutefois le format se comprend assez bien et est accessible à l'URL suivante : http://ronomo.net/api/rw. C'est de cette API que viennent les données affichées sur la carte du site.</p>
+<p>Dans l'esprit d'accessibilité des données propre aux données ouvertes, ZoneCone a été construit autour d'une API au format JSON visant à rendre facilement disponible le jeu de données ainsi consolidé. Cette API est encore partielle et non documentée. Toutefois le format se comprend assez bien et est accessible à l'URL suivante : http://zonecone.ca/api/rw. C'est de cette API que viennent les données affichées sur la carte du site.</p>
 
 <p>Si vous souhaitez utiliser cette API envoyez un petit <a href="/contact">courriel</a> avant car elle est malgré tout vouée à changer (certaines informations ne sont pas présentes pour le moment pour être plus rapide)</p>
 

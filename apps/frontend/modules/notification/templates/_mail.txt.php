@@ -22,4 +22,4 @@ Vous avez <?php echo $occ ?> nouvelle<?php if ($occ > 1){ echo "s";}  ?> notific
 		echo $string;
 }
 ?>
-Ronomo
+ZoneCone

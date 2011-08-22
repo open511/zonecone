@@ -13,8 +13,8 @@ all:
 
   sfApplyPlugin:
     from:
-      email: "bot@ronomo.net"
-      fullname: "RoNoMo RoBoTo"
+      email: "bot@zonecone.ca"
+      fullname: "ZoneCone Robot"
       
     sfApplyApplyForm_class: myApplyForm
     sfApplySettingsForm_class: mySettingsForm

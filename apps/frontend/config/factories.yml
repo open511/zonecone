@@ -54,8 +54,8 @@ all:
           host:   smtp.gmail.com
           port:   587     
           encryption: tls 
-          username: bot@ronomo.net 
-          password: f6$h1&SL 
+          username: bot@zonecone.ca
+          password: 79l!#KnJ 
 
 
   sfApplyPlugin:
@@ -63,7 +63,7 @@ all:
     mail_transport_host: smtp.gmail.com
     mail_transport_options:
       auth: login
-      username: bot@ronomo.net
-      password: f6$h1&SL 
+      username: bot@zonecone.ca
+      password: 79l!#KnJ 
       ssl: tls
       port: 587

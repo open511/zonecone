@@ -39,7 +39,7 @@
 <h2><?php echo __('Autodestruction') ?></h2>
 <div class="explication">
 <p>
-Le boutton ci-dessous vos permet de supprimer votre compte. En cliquant dessus votre compte ainsi que les donn&eacute;es sauvegard&eacute;es seront supprim&eacute;s. Vous n'existerez plus... du moins pour RoNoMo!
+Le boutton ci-dessous vos permet de supprimer votre compte. En cliquant dessus votre compte ainsi que les donn&eacute;es sauvegard&eacute;es seront supprim&eacute;s. Vous n'existerez plus... du moins pour ZoneCone!
 </p></div>
 
 <?php echo link_to(__('[Autodestruction!]'), 'sfApply/delete', array('method' => 'delete', 'confirm' => __('Are you sure? This will delete your account!'))); ?>

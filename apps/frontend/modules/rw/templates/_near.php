@@ -2,7 +2,7 @@
 <p>&nbsp;</p>
 
 <?php if ($sf_user->isAuthenticated() == false):  ?>
-	<div class="warning">En cr&eacute;ant un compte sur RoNoMo, vous pourrez b&eacute;n&eacute;ficier de notifications par courriel sur vos trajets favoris. </div>
+	<div class="warning">En cr&eacute;ant un compte sur ZoneCone, vous pourrez b&eacute;n&eacute;ficier de notifications par courriel sur vos trajets favoris. </div>
 <?php endif; ?>
 
 <?php 

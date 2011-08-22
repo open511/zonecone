@@ -2,16 +2,16 @@
 <div class="faq">
 <h2>Conditions d'utilisation</h2>
 
-<ol><li>RoNoMo vous fournit des informations sur la situation des chantiers au Québec en fonction des informations rendues disponibles pour des organismes gouvernementaux et municipaux.
-<li>Évidemment, vous ne pouvez tenir RoNoMo responsable de quoique ce soit qui vous arriverait sur la route ou ailleurs. Le contenu fournit par le site est uniquement à titre informatif.</li>
-<li>RoNoMo se réserve le droit de bloquer toute personne qui abuserait du service, notamment en envoyant un nombre élevé de requêtes. Si vous souhaitez accéder à l'information, une <a href="/data">API</a> est en cours de développement. Si l'API n'est pas suffisante, veuillez prendre <a href="/contact">contact</a>. Les ressources (serveurs, bande passante) ne sont pas illimitées ni gratuite. Si des limitations sont mise en place, c'est avant tout pour des raisons de contrôle des coûts, RoNoMo fera tout s'assurer que l'information concernant les chantiers demeure disponible.</li>
+<ol><li>ZoneCone vous fournit des informations sur la situation des chantiers au Québec en fonction des informations rendues disponibles pour des organismes gouvernementaux et municipaux.
+<li>Évidemment, vous ne pouvez tenir ZoneCone responsable de quoique ce soit qui vous arriverait sur la route ou ailleurs. Le contenu fournit par le site est uniquement à titre informatif.</li>
+<li>ZoneCone se réserve le droit de bloquer toute personne qui abuserait du service, notamment en envoyant un nombre élevé de requêtes. Si vous souhaitez accéder à l'information, une <a href="/data">API</a> est en cours de développement. Si l'API n'est pas suffisante, veuillez prendre <a href="/contact">contact</a>. Les ressources (serveurs, bande passante) ne sont pas illimitées ni gratuite. Si des limitations sont mise en place, c'est avant tout pour des raisons de contrôle des coûts, ZoneCone fera tout s'assurer que l'information concernant les chantiers demeure disponible.</li>
 </div>
 
 <div class="faq">
 <h2>Informations privées</h2>
 
 <ol><li>Si les données publiques sont vouées à être ouvertes, les données privées ont elles vocations à rester... privée! Par conséquent, toutes les informations que vous fournissez (courriel, trajets, etc.) sont protégées et n'ont pas vocation à être divulgués.</li>
-<li>RoNoMo s'engage à ne pas vendre ou donner les informations que vous fournissez SAUF aux organismes fournissant les données sources (le MTQ et la Ville de Montréal en l'état). Auquel cas, les données seront rendues anonymes, c'est-à-dire que dans le cas des informations de trajet, le lien entre le trajet et le compte l'ayant entré sera supprimé.</li>
+<li>ZoneCone s'engage à ne pas vendre ou donner les informations que vous fournissez SAUF aux organismes fournissant les données sources (le MTQ et la Ville de Montréal en l'état). Auquel cas, les données seront rendues anonymes, c'est-à-dire que dans le cas des informations de trajet, le lien entre le trajet et le compte l'ayant entré sera supprimé.</li>
 <li>Le site utilise un système de témoin (cookie) permettant notamment de gérer votre compte lorsque vous en créez un. D'autres informations peuvent y être stockées mais aucune information de nature confidentielle.</li></ol>
 
 <p>Lors de la destruction de votre compte, l'intégralité de vos données seront supprimées.</p>
@@ -26,7 +26,7 @@
 <div class="faq">
 <h2>Licences</h2>
 
-<p>La question des licences entourant les données reste incertaine. En l'état, il est donc difficule d'attribuer un licence au contenu produit par RoNoMo... C'est un sujet à méditer.</p>
+<p>La question des licences entourant les données reste incertaine. En l'état, il est donc difficule d'attribuer un licence au contenu produit par ZoneCone... C'est un sujet à méditer.</p>
 
 <p>Les données du ministère du Transport sont couvertes par le droit d'auteur du gouvernement du Québec (http://www.droitauteur.gouv.qc.ca/).</p>
 </div>

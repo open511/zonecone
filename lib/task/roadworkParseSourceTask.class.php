@@ -10,7 +10,7 @@ class roadworkParseSourceTask extends sfBaseTask
     // ));
 
     //VERY IMPORTANT : Links generated with in email will not be generated if the is not set!
-    $_SERVER['SCRIPT_NAME'] = "http://www.ronomo.net";
+    $_SERVER['SCRIPT_NAME'] = "http://www.zonecone.ca";
 
 
     $this->addOptions(array(
@@ -88,7 +88,7 @@ EOF;
       $message->setSubject("Admin - Chantiers pour " . $mySource->name);
 
 //Attention, the setFrom is overrided by esmtp
-      $message->setFrom("bot@ronomo.net", "RoNoMo RoBoTo");
+      $message->setFrom("bot@zonecone.ca", "ZoneCone Robot");
 
   // generate HTML part
       $context->getRequest()->setRequestFormat('html');

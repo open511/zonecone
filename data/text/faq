@@ -3,44 +3,38 @@
 <h2>Foire aux questions</h2>
 
 <ul>
-<li><a href="#questce">Qu'est-ce que RoNoMo ?</a></li>
-<li><a href="#queveutdire">Que veut dire RoNoMo ?</a></li>
-<li><a href="#marchepas">Que faire si RoNoMo ne fonctionne pas ?</a></li>
+<li><a href="#questce">Qu'est-ce que ZoneCone ?</a></li>
+<li><a href="#marchepas">Que faire si ZoneCone ne fonctionne pas ?</a></li>
 <li><a href="#affiliation">Êtes-vous affilié à la Ville de Montréal ou au Ministère des transports du Québec ?</a></li>
 <li><a href="#sources">D'où viennent les données utilisées ?</a></li>
 <li><a href="#fiabilite">Quelle est la fiabilité des données ?</a></li>
-<li><a href="#manip">Est-ce que RoNoMo intervient sur les données publiées ?</a></li>
+<li><a href="#manip">Est-ce que ZoneCone intervient sur les données publiées ?</a></li>
 <li><a href="#nuit">Qu'est-ce qui est défini comme un chantier de nuit ?</a></li>
 <li><a href="#inactive">Que qualifiez-vous de chantier inactif ?</a></li>
 <li><a href="#severite">Comment est définie la sévérité d'un chantier ?</a></li>
 <li><a href="#uncertain">Qu'est-ce qu'un chantier au statut incertain ?</a></li>
-<li><a href="#limites">Imposez-vous une limite d'utilisation de RoNoMo ?</a></li>
-<li><a href="#nouvellesources">Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de RoNoMo ?</a></li>
-<li><a href="#join">RoNoMo est un site exceptionnel mais il manque beaucoup de fonctionnalité et des informations sont fausses, comment aider ?</a></li>
+<li><a href="#limites">Imposez-vous une limite d'utilisation de ZoneCone ?</a></li>
+<li><a href="#nouvellesources">Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de ZoneCone ?</a></li>
+<li><a href="#join">ZoneCone est un site exceptionnel mais il manque beaucoup de fonctionnalité et des informations sont fausses, comment aider ?</a></li>
 </ul>
 
 <hr/>
 
 
 <div class="faq"><a name="questce"></a>
-<h3>Qu'est-ce que RoNoMo ?</h3>
-<p>RoNoMo est une application web visant à fournir des informations sur les travaux routiers touchant le réseau provincial québécois et les rues de la Ville de Montréal.</p>
+<h3>Qu'est-ce que ZoneCone ?</h3>
+<p>ZoneCone est une application web visant à fournir des informations sur les travaux routiers touchant le réseau provincial québécois et les rues de la Ville de Montréal.</p>
+<p>Sans vous enregistrer, il vous permet d'obtenir de manière ponctuelle les travaux actifs sur un trajet. En vous enregistrant, vous avez alors la possibilité d'enregistrer des trajets réguliers pour lesquels vous recevrez des notifications par courriel en cas d'apparition/suppression de chantier.</p>
 </div>
-
-<div class="faq"><a name="queveutdire"></a>
-<h3>Que veut dire RoNoMo ?</h3>
-<p>RoNoMo est un presque-acronyme pour Roadwork No More. C'était surtout un nom de domaine disponible, facile à retenir et relativement court!</p>
-</div>
-
 
 <div class="faq"><a name="marchepas"></a>
-<h3>Que faire si RoNoMo ne fonctionne pas</h3>
+<h3>Que faire si ZoneCone ne fonctionne pas</h3>
 <p>Pour l'heure les questions, remarques et insultes se font par <a href="/contact">courriel</a>.</p>
 </div>
 
 <div class="faq"><a name="affiliation"></a>
 <h3>Êtes-vous affilié à la Ville de Montréal ou au Ministère des transports du Québec?</h3>
-<p>Non. RoNoMo est une initiative personnelle, l'auteur a absolument aucun contact avec les services en charge des travaux à la Ville ou au MTQ. Il serait surement intéressant d'établir des liens avec ces organismes mais pour l'heure ce n'est pas le cas.</p>
+<p>Non. ZoneCone est une initiative personnelle, l'auteur a absolument aucun contact avec les services en charge des travaux à la Ville ou au MTQ. Il serait surement intéressant d'établir des liens avec ces organismes mais pour l'heure ce n'est pas le cas.</p>
 </div>
 
 <div class="faq"><a name="sources"></a>
@@ -58,8 +52,8 @@
 </div>
 
 <div class="faq"><a name="manip"></a>
-<h3>Est-ce que RoNoMo intervient sur les données publiées ?</h3>
-<p>Oui et non. Aucune modification n'est faite sur les données sources, mais certaines informations sont ajoutées. Le code derrière RoNoMo essaie d'extraire autant que possible toutes les informations: date de début et de fin, description, type d'entrave, etc.</p>
+<h3>Est-ce que ZoneCone intervient sur les données publiées ?</h3>
+<p>Oui et non. Aucune modification n'est faite sur les données sources, mais certaines informations sont ajoutées. Le code derrière ZoneCone essaie d'extraire autant que possible toutes les informations: date de début et de fin, description, type d'entrave, etc.</p>
 <p>Cependant d'autres éléments n'existent simplement pas au niveau des sources comme la sévérité de l'entrave ou le fait que des travaux sont fait de nuit. Pour ceux deux éléments donc, l'information est ajoutée manuellement sur base des descriptions disponibles.</p>
 </div>
 
@@ -70,12 +64,12 @@
 
 <div class="faq"><a name="inactive"></a>
 <h3>Que qualifiez-vous de chantier inactif ?</h3>
-<p>Un chantier inactif est un chantier qui n'a pas atteint sa date de fin mais qui a disparu des données sources sur lesquelles se base RoNoMo. Dans le cas des données du MTQ notamment, cela signifie que le chantier n'est pas actif au moment présent, et donc qu'il ne perturbe pas la circulation.</p>
+<p>Un chantier inactif est un chantier qui n'a pas atteint sa date de fin mais qui a disparu des données sources sur lesquelles se base ZoneCone. Dans le cas des données du MTQ notamment, cela signifie que le chantier n'est pas actif au moment présent, et donc qu'il ne perturbe pas la circulation.</p>
 </div>
 
 <div class="faq"><a name="severite"></a>
 <h3>Comment est définie la sévérité d'un chantier ?</h3>
-<p>La sévérité est une note attribuée par RoNoMo pour essayer de rendre plus lisibles les cartes et les (souvent longues) listes de travaux. C'est hautement subjectif mais suit tout de même les grandes règles suivantes:
+<p>La sévérité est une note attribuée par ZoneCone pour essayer de rendre plus lisibles les cartes et les (souvent longues) listes de travaux. C'est hautement subjectif mais suit tout de même les grandes règles suivantes:
 <ol><li>Un chantier est considéré bloquant quand il implique une fermeture complète de rue, de route ou d'un accès (bretelle, sortie).</li>
 <li>Un chantier est considéré gênant lorsqu'il implique une fermeture de voie, une circulation en alternance ou résulte d'une manière ou d'une autre dans la limitation du flot automobile,</li>
 <li>Un chantier est considéré comme non-gênant lorsqu'il n'implique pas d'entrave directe du flot de circulation mais peut affecter par exemple le stationnement.</li></ol>
@@ -91,15 +85,15 @@
 
 
 <div class="faq"><a name="limites"></a>
-<h3>Imposez-vous une limite d'utilisation de RoNoMo ?</h3>
-<p>Tel qu'exprimé dans les <a href="/terms">conditions d'utilisation</a>, RoNoMo peut limiter l'utilisation du service, voire bloquer certains utilisateurs. Deux causes à cela :</p>
+<h3>Imposez-vous une limite d'utilisation de ZoneCone ?</h3>
+<p>Tel qu'exprimé dans les <a href="/terms">conditions d'utilisation</a>, ZoneCone peut limiter l'utilisation du service, voire bloquer certains utilisateurs. Deux causes à cela :</p>
 <ol><li>Les ressources (serveurs, bande passante) ne sont pas illimités, malheureusement... </li>
 <li>L'API Google Maps impose des limites d'utilisation qui peuvent avoir des effets sur différentes fonctionnalités du site, notamment le "direction renderer" qui permet de tracer un trajet sur la carte. À l'instant où sont écrites ces lignes, les seuils exacts de ces limitations et surtout les impacts en cas de dépassement ne sont pas clairement connus et Google tarde à répondre aux questions. Par ailleurs, les conditions d'utilisation de ces API sont vouées à changer au mois d'octobre sans que les détails du fonctionnement futur ne soient connus.</li></ol>
 </div>
 
 <div class="faq"><a name="nouvellesources"></a>
-<h3>Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de RoNoMo ?</h3>
-<p>Oui mais ce n'est pas évident. RoNoMo a été développé de manière à facilement pouvoir ajouter des sources de données. Cela prend cependant une source répondant aux critères suivants</p>
+<h3>Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de ZoneCone ?</h3>
+<p>Oui mais ce n'est pas évident. ZoneCone a été développé de manière à facilement pouvoir ajouter des sources de données. Cela prend cependant une source répondant aux critères suivants</p>
 <ol><li>Disponible de manière ouverte</li>
 <li>Dans un format structuré</li>
 <li>N'interdisant pas explicitement la réutilisation des données</li>
@@ -110,7 +104,7 @@
 </div>
 
 <div class="faq"><a name="join"></a>
-<h3>RoNoMo est un site exceptionnel mais il manque de nombreuses de fonctionnalités et des informations sont fausses, comment aider ?</h3>
+<h3>ZoneCone est un site exceptionnel mais il manque de nombreuses de fonctionnalités et des informations sont fausses, comment aider ?</h3>
 
 <p>Vous pouvez aider de deux façons :
 <ol><li>En remontant de l'information sur les travaux. Si vous utilisez une route quotidiennement, vous pouvez remonter si des informations erronnée ou manquantes concernent des travaux. Dans un premier cela va se faire uniquement par <a href="/contact">courriel</a>, mais il devrait être possible d'améliorer cela dans les mois à venir</li>
