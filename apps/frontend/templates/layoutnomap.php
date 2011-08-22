@@ -4,8 +4,26 @@
 	<head>
 		<?php include_http_metas() ?>
 		<?php include_metas() ?>
-                <link rel="shortcut icon" type="image/png" href="http://ronomo.net/favicon.png" />
+        <meta name="author" content="Stephane Guidoin" />
+        <meta name="keywords" content="Montreal, Montréal, Québec, Quebec, Ministère du Transport du Québec, Ville de Montréal, Chantiers, travaux, travaux routiers, roadworks" />
+        <meta name="description" content="ZoneCone.ca - Localisation des travaux routiers au Québec selon les trajets" />
+        <meta name="icbm" content="45.52600, -73.567811" />
+
+                <link rel="shortcut icon" type="image/png" href="http://zonecone.ca/favicon.png" />
                 <?php include_stylesheets() ?>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25266512-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 		<script type="text/javascript">
 //<![CDATA[
 
@@ -68,14 +86,14 @@
 			});
 		//]]>
 		</script>
-		<title>RoNoMo - &Eacute;vitez les chantiers routiers!</title>
+                <title>ZoneCone - &Eacute;vitez les chantiers routiers!</title>
 	</head>
 	<body>
 		<div id="header" class="ui-layout-north">
 			<div id="title">
 			  <div id="logo"><img src="/images/logo.png" alt="logo"/></div>
 			  <h1>
-		    	    <a href="/">RoNoMo<span>.net</span></a>
+                            <a href="/">ZoneCone<span>.ca</span></a>
 			  </h1>
 			</div>
                         <div id="nav">

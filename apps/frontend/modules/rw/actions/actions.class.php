@@ -12,7 +12,8 @@ class rwActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-      $this->roadworks = Doctrine_Core::getTable('RwRoadwork')->getTableWithGeom();
+       $this->forward404();
+      //$this->roadworks = Doctrine_Core::getTable('RwRoadwork')->getTableWithGeom();
   }
 
   public function executeShow(sfWebRequest $request)

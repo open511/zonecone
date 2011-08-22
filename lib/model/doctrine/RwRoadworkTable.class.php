@@ -110,9 +110,8 @@ class RwRoadworkTable extends sfMapFishTable
         ->where('ST_DWithin(ST_GeomFromText(\''. $geom .'\', 4326), geom,  0.002)');
 
 
-      $q->andWhere("date_trunc('day', \"start_date\") <= CURRENT_DATE OR start_date IS NULL")
-        ->andWhere("date_trunc('day', \"end_date\") >= CURRENT_DATE OR end_date IS NULL")
-        ->andWhere("is_active = true OR is_uncertain = true");
+      $q->andWhere("(CURRENT_DATE <= date_trunc('day', \"end_date\") OR end_date IS NULL) OR is_uncertain = true");
+
 
 	     
 	   return $q->execute();     
@@ -127,7 +126,7 @@ class RwRoadworkTable extends sfMapFishTable
 
         //Can't get DISTINCT clause working with the ORM, so let's go for some raw SQL!
 		return Doctrine_Manager::getInstance()->getCurrentConnection()
-		  ->fetchArray('SELECT COUNT(id) from rw_roadwork where ST_DWithin(ST_GeomFromText(\''. $geom .'\', 4326), geom,  0.002)');
+		  ->fetchArray('SELECT COUNT(id) from rw_roadwork where ST_DWithin(ST_GeomFromText(\''. $geom .'\', 4326), geom,  0.002) AND (CURRENT_DATE <= date_trunc(\'day\', "end_date") OR is_uncertain = true)');
   
 	 }
 	 

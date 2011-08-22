@@ -21,11 +21,11 @@
 	     <?php echo "<p>Début: <b>". $roadwork->getFormattedStartDate() ."</b> <br/>";
 	           echo "Fin: <b>". $roadwork->getFormattedEndDate() ."</b></p>"; ?>
 
-             <?php if ($roadwork->getIsUncertain() == true){echo "<p style='color:#900'><b>Ce chantier a un statut incertain</b> <a href='http://www.ronomo.net/faq#uncertain'>(?)</a> <sup>^_^</sup> </p>";} ?>
+             <?php if ($roadwork->getIsUncertain() == true){echo "<p style='color:#900'><b>Ce chantier a un statut incertain</b> <a href='/faq#uncertain'>(?)</a> <sup>^_^</sup> </p>";} ?>
 
-             <?php if ($roadwork->getIsNight() == true){echo "<p style='color:#009'><b>Ce chantier se déroule principalement de nuit</b> <a href='http://www.ronomo.net/faq#nuit'>(?)</a>  <sup>^_^</sup></p>";} ?>
+             <?php if ($roadwork->getIsNight() == true){echo "<p style='color:#009'><b>Ce chantier se déroule principalement de nuit</b> <a href='/faq#nuit'>(?)</a>  <sup>^_^</sup></p>";} ?>
 
-             <?php if ($roadwork->getIsActive() == false && $roadwork->getIsUncertain() == false){echo "<p style='color:#888'><b>Ce chantier semble inactif</b> <a href='http://www.ronomo.net/faq#inactive'>(?)</a>  <sup>^_^</sup></p>";} ?>
+             <?php if ($roadwork->getIsActive() == false && $roadwork->getIsUncertain() == false){echo "<p style='color:#888'><b>Ce chantier semble inactif</b> <a href='/faq#inactive'>(?)</a>  <sup>^_^</sup></p>";} ?>
 </div>
 
     	     <?php if (!is_null($roadwork->getRaw('direction'))) : ?><div class="route"><p><b>Direction:</b>  <?php echo $roadwork->getRaw('direction') ?></p></div><?php endif;?>		
