@@ -104,7 +104,7 @@ a link permitting you to change your password if you wish.
       </trans-unit>
       <trans-unit id="23">
         <source>Username or E-Mail</source>
-        <target>Adresse courriel</target>
+        <target>Nom d'utilisateur</target>
       </trans-unit>
       <trans-unit id="24">
         <source>Remember</source>
@@ -144,7 +144,7 @@ a link permitting you to change your password if you wish.
       </trans-unit>
       <trans-unit id="33">
         <source>Text Apply After Success</source>
-        <target>Merci! Votre compte est créé mais non actif pour le moment. Vous allez recevoir un courriel avec un lien vous permettant d'activer votre compte. Assurez-vous juste que ce courriel ne soit pas attrapé par votre filtre anti-spam!</target>
+        <target>Merci! Votre compte est désormais actif, il vous suffit de vous connecter :)</target>
       </trans-unit>
     </body>
   </file>

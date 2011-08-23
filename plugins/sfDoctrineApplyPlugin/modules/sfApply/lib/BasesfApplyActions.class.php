@@ -21,7 +21,7 @@ class BasesfApplyActions extends sfActions
         $guid = "n" . self::createGuid();
         $this->form->setValidate($guid);
         $this->form->save();
-        try
+/*        try
         {
           $profile = $this->form->getObject();
           $this->sendVerificationMail($profile);
@@ -36,7 +36,10 @@ class BasesfApplyActions extends sfActions
             // You could re-throw $e here if you want to 
           // make it available for debugging purposes
           return 'MailerError';
-        }
+        }*/
+
+return 'After';
+
       }
     }
   }

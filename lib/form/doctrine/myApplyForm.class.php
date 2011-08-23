@@ -188,10 +188,10 @@ class myApplyForm extends sfGuardUserProfileForm
     $user->setUsername($this->getValue('username'));
     $user->setPassword($this->getValue('password'));
     // They must confirm their account first
-    $user->setIsActive(false);
 
 //Steph
     $user->setEmailAddress($this->getValue('email'));
+    $user->setIsActive(true);
 //\Steph - A voir si on veut implementer le prenom / nom pour les remplir dans SfGuardUser
     
     $user->save();
