@@ -7,6 +7,7 @@
 <?php end_slot() ?>
 <div class="sf_apply sf_apply_apply">
 <h2><?php echo __("Apply for an Account") ?></h2>
+<p style="color: #C44; font-size: 20px;">Du fait de la charge actuelle sur le serveur, nous éprouvons des difficultés pour créer des comptes (simplement dit: ça ne fonctionne pas). Nous essayons de régler le problème, merci de repasser plus tard</p>
 <form method="POST" action="<?php echo url_for('sfApply/apply') ?>"
   name="sf_apply_apply_form" id="sf_apply_apply_form">
 <ul>
