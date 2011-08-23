@@ -113,6 +113,7 @@
 
 		</div>
 		<div class="ui-layout-west">
+
                                 <?php if ($sf_user->isAuthenticated()): ?>
                         <div id="menu">
                                 <div id="m-routes"><a href="#routes" onclick="showContent('my-routes')">Trajets sauvegardés</a></div>
@@ -122,7 +123,9 @@
                         </div>
                        <?php endif; ?>
  
-
+<div style="padding: 5px 12px;">
+<p style="color: #c33; font-size: 12px">En raison de l'affluence exceptionnelle, les fonctionnalités d'envoie de courriels (notifications, réinitialisation de mot de passe) sont désactivées. Par ailleurs, il semble que l'affichage d'un trajet ne fonctionne pas avec certaines versions d'Internet Explorer. Merci d'essayer avec FireFox, Chrome ou Opera en attendant que le problème soit réglé</p>
+</div>
 			<div id="panels">
 				<?php if ($sf_user->isAuthenticated() == 1 ): ?>
 				<div class="panel" id ="new-route">
