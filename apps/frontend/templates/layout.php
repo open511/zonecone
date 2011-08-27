@@ -8,6 +8,7 @@
         <meta name="keywords" content="Montreal, Montréal, Québec, Quebec, Ministère du Transport du Québec, Ville de Montréal, Chantiers, travaux, travaux routiers, roadworks" />
         <meta name="description" content="ZoneCone.ca - Localisation des travaux routiers au Québec selon les trajets" />
         <meta name="icbm" content="45.52600, -73.567811" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=IE7">
                 <link rel="shortcut icon" type="image/png" href="http://zonecone.ca/favicon.png" />
                 <?php include_stylesheets() ?>
 <script type="text/javascript">
@@ -124,7 +125,7 @@
                        <?php endif; ?>
  
 <div style="padding: 5px 12px;">
-<p style="color: #c33; font-size: 12px">En raison de l'affluence exceptionnelle, les fonctionnalités d'envoie de courriels (notifications, réinitialisation de mot de passe) sont désactivées. Par ailleurs, il semble que l'affichage d'un trajet ne fonctionne pas avec certaines versions d'Internet Explorer. Merci d'essayer avec FireFox, Chrome ou Opera en attendant que le problème soit réglé</p>
+<p style="color: #c33; font-size: 12px">Malgré de nombreux tests, il semble que le site ne soit pas compatible avec certaines versions d'Internet Explorer. Si vous le pouvez, essayez avec FireFox, Chrome ou Opera en attendant que le problème soit réglé</p>
 </div>
 			<div id="panels">
 				<?php if ($sf_user->isAuthenticated() == 1 ): ?>

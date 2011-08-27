@@ -8,7 +8,7 @@
         <meta name="keywords" content="Montreal, Montréal, Québec, Quebec, Ministère du Transport du Québec, Ville de Montréal, Chantiers, travaux, travaux routiers, roadworks" />
         <meta name="description" content="ZoneCone.ca - Localisation des travaux routiers au Québec selon les trajets" />
         <meta name="icbm" content="45.52600, -73.567811" />
-
+        <meta http-equiv="X-UA-Compatible" content="chrome=IE7">
                 <link rel="shortcut icon" type="image/png" href="http://zonecone.ca/favicon.png" />
                 <?php include_stylesheets() ?>
 <script type="text/javascript">
