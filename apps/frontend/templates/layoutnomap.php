@@ -89,6 +89,41 @@
                 <title>ZoneCone - &Eacute;vitez les chantiers routiers!</title>
 	</head>
 	<body>
+  <!--[if lt IE 8]>
+    <script type="text/javascript" 
+     src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+
+    <style>
+     .chromeFrameInstallDefaultStyle {
+       width: 100%; /* default is 800px */
+       border: 5px solid blue;
+     }
+
+     #prompt { 
+       width: 100%;
+       height: 300px;
+       position: absolute;
+       z-index: 100;
+     }
+    </style>
+
+    <div id="prompt">
+     <!-- if IE without GCF, prompt goes here -->
+    </div>
+ 
+    <script>
+     // The conditional ensures that this code will only execute in IE,
+     // Therefore we can use the IE-specific attachEvent without worry
+     window.attachEvent("onload", function() {
+       CFInstall.check({
+         url: "http://zonecone.ca/checkChromeFrame",
+         mode: "inline", // the default
+         node: "prompt"
+       });
+     });
+    </script>
+  <![endif]-->
+
 		<div id="header" class="ui-layout-north">
 			<div id="title">
 			  <div id="logo"><img src="/images/logo.png" alt="logo"/></div>

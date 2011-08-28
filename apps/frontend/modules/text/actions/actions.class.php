@@ -15,12 +15,6 @@ class textActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
-  {
-    $this->content = "meuh dans l'action";
-
-  }
-
   public function executeShow (sfWebRequest $request)
   {
 
@@ -33,6 +27,10 @@ class textActions extends sfActions
 
     
     $this->content= $content;
+
+   if ($param == "/checkChromeFrame"){
+     $this->setLayout(false);
+   }
 
     // $this->content= $_SERVER['REQUEST_URI'] ;
 

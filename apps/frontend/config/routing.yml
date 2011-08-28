@@ -94,6 +94,10 @@ contact:
   url: /contact
   param: { module: text, action: show}
 
+checkChromeFrame:
+  url: /checkChromeFrame
+  param: { module: text, action: show}
+
 
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
