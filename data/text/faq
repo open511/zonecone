@@ -1,11 +1,13 @@
 
-
 <h2>Foire aux questions</h2>
 
 <ul>
 <li><a href="#questce">Qu'est-ce que ZoneCone ?</a></li>
 <li><a href="#marchepas">Que faire si ZoneCone ne fonctionne pas ?</a></li>
 <li><a href="#affiliation">Êtes-vous affilié à la Ville de Montréal ou au Ministère des transports du Québec ?</a></li>
+<li><a href="#todo">ZoneCone est un bon début, mais est-ce qu'on ne pourrait pas faire plus?</a></li>
+<li><a href="#evitement">Pourquoi le site ne propose pas d'itinéraire pour éviter les travaux? Pourquoi ce n'est pas dans vos plans?</a></li>
+<li><a href="#API">Le terme API est mentionné à plusieurs endroits. Qu'est-ce ?</a></li>
 <li><a href="#sources">D'où viennent les données utilisées ?</a></li>
 <li><a href="#fiabilite">Quelle est la fiabilité des données ?</a></li>
 <li><a href="#manip">Est-ce que ZoneCone intervient sur les données publiées ?</a></li>
@@ -14,12 +16,12 @@
 <li><a href="#severite">Comment est définie la sévérité d'un chantier ?</a></li>
 <li><a href="#uncertain">Qu'est-ce qu'un chantier au statut incertain ?</a></li>
 <li><a href="#limites">Imposez-vous une limite d'utilisation de ZoneCone ?</a></li>
+<li><a href="#chromeFrame">ZoneCone.ca me dit que mon navigateur est trop ancien, je me sens insulté!</a></li>
 <li><a href="#nouvellesources">Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de ZoneCone ?</a></li>
 <li><a href="#join">ZoneCone est un site exceptionnel mais il manque beaucoup de fonctionnalité et des informations sont fausses, comment aider ?</a></li>
 </ul>
 
 <hr/>
-
 
 <div class="faq"><a name="questce"></a>
 <h3>Qu'est-ce que ZoneCone ?</h3>
@@ -35,6 +37,34 @@
 <div class="faq"><a name="affiliation"></a>
 <h3>Êtes-vous affilié à la Ville de Montréal ou au Ministère des transports du Québec?</h3>
 <p>Non. ZoneCone est une initiative personnelle, l'auteur a absolument aucun contact avec les services en charge des travaux à la Ville ou au MTQ. Il serait surement intéressant d'établir des liens avec ces organismes mais pour l'heure ce n'est pas le cas.</p>
+</div>
+
+<div class="faq"><a name="todo"></a>
+<h3>ZoneCone est un bon début, mais est-ce qu'on ne pourrait pas faire plus?</h3>
+<p>Bien sûr que oui! La version actuellement disponible est une ébauche d'un grand plan de domination du monde. De nombreuses fonctionnalités sont au programme, c'est surtout une question de temps. Voici les principales évolutions à attendre (par ordre de priorité):</p>
+<ol><li>Permettre aux utilisateurs d'ajouter, commenter et supprimer des chantiers. Outre la difficulté technique, la principale question est celle de la modération à appliquer à ce que les utilisateurs feront</li>
+<li>Traduire le site en anglais. En fait, la question n'est pas seulement de traduire le texte, ce serait trop facile! Il faut toute une poutine technique pour gérer l'aspect multilingue. Par ailleurs, les sources d'informations ne sont pas toujours disponibles en français et en anglais...</li>
+<li>Améliorer l'API de manière à présenter toute l'information disponible, y compris les trajets mémorisés dans un compte. Permettre aussi d'envoyer des informations à ZoneCone via l'API.</li>
+<li>Proposer des versions mobiles. Plusieurs entreprises ou individus m'ont contacté pour faire des versions mobiles et des applications de ZoneCone. Mais pour pleinement aller de l'avant de ce coté, il faut que l'API soit finalisée.</li>
+<li>Supporter les itinéraires alternatifs. À défaut de pouvoir proposer le meilleur itinéraire pour éviter les travaux, il devrait être possible de proposer plusieurs variantes pour un même trajet</li></ol>
+<p>Au milieu de tout ceci, plusieurs améliorations ponctuelles ainsi que les éternelles corrections de bugs devront être faite. Ceci devrait d'ailleurs passer par le mise en place d'un outil de bug tracking.</p>
+</div>
+
+<div class="faq"><a name="evitement"></a>
+<h3>Pourquoi le site ne propose pas d'itinéraire pour éviter les travaux? Pourquoi ce n'est pas dans vos plans?</h3>
+<p>Ce serait le rêve: fournir les points de départ et d'arrivée puis obtenir un trajet sans travaux. Ça ne semble pas réaliste pour plusieurs raisons.</p>
+<ol><li>Le site se repose sur l'API Google Maps pour le calcul de trajet. Cette API ne permet pas de fournir des points à éviter. Et quand bien même ce serait possible, ça ferait trop de points à éviter</li>
+<li>En supposant qu'il soit techniquement possible de calculer des trajets sans travaux, cela risque de générer des trajets avec de grands détours, passant par des rues résidentielles, etc. Considérant qu'il n'est pas possible d'évaluer le délai qu'occasionne un chantier sur un trajet, ce serait surement contre-productif.</li>
+<li>Supposons que l'on obtienne deux trajets réalistes: une option avec 3 chantiers d'un coté, et une autre avec un seul chantier. Est-ce que le ZoneCone devrait automatiquement proposer celle avec un unique chantier? Pas nécessairement car un unique chantier mal placé ou plus important peut avoir plus d'impact que trois.</li>
+</ol>
+<p>Bref, tout ceci pour dire qu'étant donné la complexité du problème et la qualité des données disponibles (les chantiers, mais aussi le trafic), il semble difficile de proposer une option de calcul de trajet évitant les travaux ou même de prévoir de le faire avec les moyens actuellement disponibles.
+</div>
+
+
+<div class="faq"><a name="API"></a>
+<h3>Le terme API est mentionné à plusieurs endroits. Qu'est-ce ?</h3>
+<p>Dans le cadre utilisé, une API est un moyen d'accéder à de l'information de manière programmatique. En d'autres terme, c'est une méthode pour fournir de l'information dans un format qui sera lue par un autre logiciel, et non par un humain.</p>
+<p>Le but d'une telle API est de permettre, par exemple, à une application mobile de lire le contenu de ZoneCone pour ensuite afficher des informations.</p>
 </div>
 
 <div class="faq"><a name="sources"></a>
@@ -91,6 +121,13 @@
 <li>L'API Google Maps impose des limites d'utilisation qui peuvent avoir des effets sur différentes fonctionnalités du site, notamment le "direction renderer" qui permet de tracer un trajet sur la carte. À l'instant où sont écrites ces lignes, les seuils exacts de ces limitations et surtout les impacts en cas de dépassement ne sont pas clairement connus et Google tarde à répondre aux questions. Par ailleurs, les conditions d'utilisation de ces API sont vouées à changer au mois d'octobre sans que les détails du fonctionnement futur ne soient connus.</li></ol>
 </div>
 
+<div class="faq"><a name="chromeFrame"></a>
+<h3>ZoneCone.ca me dit que mon navigateur est trop ancien et me demande d'installer un programme!, pourquoi?</h3>
+<p>De manière à développer le site rapidement et offrant une certaine ergonomie, ZoneCone utilise certaines technologies qui ne sont pas supportées par les versions les plus anciennes (et les moins standards) des navigateurs Internet, au rang desquels Internet explorer 6 et inférieur.</p>
+<p>Beaucoup d'entreprises utilisent encore ces navigateurs désuets, mais supporter ces vieilles versions consommerait du temps nécessaire pour développer de nouvelles fonctionnalités. La solution choisie pour rendre ZoneCone utilisable par le maximum de personnes est donc d'utiliser une voie de contournement. Il s'agit d'un plugin, <a href="http://www.google.com/chromeframe?prefersystemlevel=true">Chrome Frame</a>, qui normalement s'installe sans nécessiter de droits d'administrateurs et qui vous permet de bénéficier d'une expérience de navigation... moderne!</p>
+<p>Une fois installé, ce plugin ne devrait s'activer <b>que</b> lorsqu'il rencontre des sites Internet détectant que votre navigateur est trop vieux et capables d'activer le plugin. En d'autres termes, l'installation ne devrait pas perturber votre navigation sur les sites qui fonctionnaient avant. De même que ça ne devrait pas affecter les personnes avec des navigateurs récents. En cas de problème, un petit courriel pourra tout résoudre: info@zonecone.ca.</p>
+</div>
+
 <div class="faq"><a name="nouvellesources"></a>
 <h3>Est-il possible de soumettre de nouvelles sources d'information ou d'augmenter la couverture de ZoneCone ?</h3>
 <p>Oui mais ce n'est pas évident. ZoneCone a été développé de manière à facilement pouvoir ajouter des sources de données. Cela prend cependant une source répondant aux critères suivants</p>
@@ -109,4 +146,5 @@
 <p>Vous pouvez aider de deux façons :
 <ol><li>En remontant de l'information sur les travaux. Si vous utilisez une route quotidiennement, vous pouvez remonter si des informations erronnée ou manquantes concernent des travaux. Dans un premier cela va se faire uniquement par <a href="/contact">courriel</a>, mais il devrait être possible d'améliorer cela dans les mois à venir</li>
 <li>Si vous avez des connaissances dans le développement web, notamment PHP, PostgreSQL, PostGIS, Symfony, le javascript et bien entendu le HTML et CSS, votre aide sera très précieuse pour améliorer le site.</li></ol>
+<p>Pour l'instant, l'occupation principale est de gérer les bugs et les questions venant de partout. Ensuite je vais récupérer toutes les propositions d'aide et voir ce qu'on peut faire avec.</p>
 </div>
