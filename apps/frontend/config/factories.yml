@@ -51,19 +51,19 @@ all:
       transport:
         class: Swift_SmtpTransport
         param:
-          host:   smtp.gmail.com
-          port:   587     
+          host:   smtp.postmarkapp.com 
+          port:   2525 
           encryption: tls 
-          username: bot@zonecone.ca
+          username: robot@zonecone.ca
           password: 79l!#KnJ 
 
 
   sfApplyPlugin:
     mail_transport_class: Zend_Mail_Transport_Smtp 
-    mail_transport_host: smtp.gmail.com
+    mail_transport_host: smtp.postmarkapp.com 
     mail_transport_options:
       auth: login
-      username: bot@zonecone.ca
+      username: robot@zonecone.ca
       password: 79l!#KnJ 
       ssl: tls
-      port: 587
+      port: 2525 

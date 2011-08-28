@@ -13,7 +13,7 @@ all:
 
   sfApplyPlugin:
     from:
-      email: "bot@zonecone.ca"
+      email: "robot@zonecone.ca"
       fullname: "ZoneCone Robot"
       
     sfApplyApplyForm_class: myApplyForm

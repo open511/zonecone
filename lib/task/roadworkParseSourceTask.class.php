@@ -88,7 +88,7 @@ EOF;
       $message->setSubject("Admin - Chantiers pour " . $mySource->name);
 
 //Attention, the setFrom is overrided by esmtp
-      $message->setFrom("bot@zonecone.ca", "ZoneCone Robot");
+      $message->setFrom("robot@zonecone.ca", "ZoneCone Robot");
 
   // generate HTML part
       $context->getRequest()->setRequestFormat('html');
@@ -97,7 +97,7 @@ EOF;
   // Render message parts
       $message->setBodyHtml($html, 'text/html');
 //TODO: rendre l'adresse from et to configurable
-      $message->addTo('stephane.guidoin@gmail.com', 'Steph');
+      $message->addTo('info@zonecone.ca', 'Info ZoneCone');
       $message->send($transport);
     }
 

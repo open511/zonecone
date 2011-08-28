@@ -74,7 +74,7 @@ EOF;
 			     // Render message parts
 			     $message->setBodyHtml($html, 'text/html');
 			     $message->setBodyText($plain, 'text/plain');
-			     $message->setFrom('bot@zonecone.ca', 'ZoneCone Robot');
+			     $message->setFrom('robot@zonecone.ca', 'ZoneCone Robot');
 			     $message->addTo($rw_notifications[0]->getSfGuardUser()->getEmailAddress(), 
 			       $rw_notifications[0]->getSfGuardUser()->getFirstName() . " " . $rw_notifications[0]->getSfGuardUser()->getLastName());
 			     $message->send($transport);
