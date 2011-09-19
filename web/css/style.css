@@ -11,7 +11,7 @@ body {min-width: 960px;}
 
 /* Header */
 #header { background: #FFF; border-bottom: 1px solid #ccc; }
-#footer { background: #FFF; border-bottom: 1px solid #ccc; }
+#footer { background: #FFF; border-top: 1px solid #ccc; margin: 0px; padding: 0px; width: 100%}
 #header h1 { line-height: 1; float: left; margin: 10px 0 0 0; font-size: 20px; font-weight: bold; color: #555; }
 #header h1 a { line-height: 1; float: left; margin: 0; font-size: 20px; font-weight: bold; color: #555; }
 #header h1 a:hover { text-decoration: none; }
@@ -27,6 +27,7 @@ body {min-width: 960px;}
 
 #nav {float: right;} 
 .subnav {position: relative; margin: 0; margin: 20px  5px 4px 5px; float: left; color: #ADBFC2}
+.subfooter {margin: 3px auto 3px auto; color: #ADBFC2; width: 50%; text-align: center;}
 .sharebuttons {position: relative; margin: 0; margin: 13px  5px 4px 5px; float: left; color: #ADBFC2}
 .logomo {position: relative; margin: 0; margin: 3px 5px 0 5px; float: left; border:0px }
 

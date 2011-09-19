@@ -2,6 +2,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'pgsql:host=localhost;dbname=rw'
+      dsn: 'pgsql:host=localhost;dbname=dev'
       username: postsql
       password: 5QL4Dmin

@@ -56,6 +56,9 @@
 		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 		<script src="http://maps.google.com/maps/api/js?libraries=places&amp;sensor=false" type="text/javascript"></script>
 		<script src="http://code.jquery.com/jquery-1.6.1.min.js" type="text/javascript"></script>
+                <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+                  {lang: 'fr'}
+                </script>
 		<script src="http://code.jquery.com/ui/1.8.13/jquery-ui.min.js" type="text/javascript"></script>
 		<?php include_javascripts() ?>
 
@@ -132,6 +135,20 @@
 			  </h1>
 			</div>
                         <div id="nav">
+                                                                                                        <div id="fb-root"></div>
+                                                                                                        <script>(function(d, s, id) {
+                                                                                                          var js, fjs = d.getElementsByTagName(s)[0];
+                                                                                                          if (d.getElementById(id)) {return;}
+                                                                                                          js = d.createElement(s); js.id = id;
+                                                                                                          js.src = "//connect.facebook.net/en_US/all.js#appId=155922517829169&xfbml=1";
+                                                                                                          fjs.parentNode.insertBefore(js, fjs);
+                                                                                                        }(document, 'script', 'facebook-jssdk'));</script>
+
+                          <div class="subnav"><a href="http://blog.zonecone.ca">Blogue</a></div>
+                          <div class="subnav"> <a href="http://twitter.com/zonecone">@ZoneCone</a></div>
+                          <div class="sharebuttons"><a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="ZoneCone">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></div>
+                          <div class="sharebuttons"><g:plusone  size="medium" count="false"></g:plusone></div>
+                          <div class="sharebuttons"><iframe src="//www.facebook.com/plugins/like.php?app_id=251097881595457&amp;href=http%3A%2F%2Fzonecone.ca&amp;send=false&amp;layout=button_count&amp;width=80&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe></div>
                                 <?php if ($sf_user->isAuthenticated()): ?>
                                   <div class="subnav" id="who"> Connect&eacute;: <?php echo $sf_user->getGuardUser()->getUsername(); ?></div>
                                   <div class="subnav" id="options"><a href="/settings">Options</a></div>
@@ -141,18 +158,14 @@
                                         <div class="subnav" id="apply"><a href="/apply">Cr&eacute;er un compte</a></div>
                                 <?php endif; ?>
 
-                                <div class="subnav"><a href="/about">&Agrave; propos</a></div>
-                                <div class="subnav"><a href="/terms">Utilisation</a></div>
-                                <div class="subnav"><a href="/data">Donn&eacute;es</a></div>
-                                <div class="subnav"><a href="/faq">FAQ</a></div>
-                                <div class="subnav"><a href="/contact">Contact</a></div>
 
                                 <div class="logomo"><a href="http://montrealouvert.net/donnees-ouvertes-questions-frequemment-demandees/?lang=fr">
                                   <img src="/images/horizontal-logo-francais.png" alt="Logo Montreal Ouvert"/></a>
                                 </div>
                         </div>
 
-		</div>
+                </div>
+
 		<div class="ui-layout-center">
                         <div class="mainnomap">
                                 <div class="contentnomap">
@@ -162,5 +175,14 @@
                 </div>
 
 		</div>
+                <div id="footer" class="ui-layout-south">
+                                <div class="subfooter"><a href="/about">&Agrave; propos</a> -
+                                <a href="/terms">Conditions d'utilisation</a> -
+                                <a href="/data">Donn&eacute;es et couverture</a> -
+                                <a href="/faq">FAQ</a> -
+                                <a href="/contact">Contact</a></div>
+
+                </div>
+
 	</body>
 </html>
