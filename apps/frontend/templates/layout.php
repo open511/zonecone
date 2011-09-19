@@ -56,7 +56,11 @@
 		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 		<script src="http://maps.google.com/maps/api/js?libraries=places&amp;sensor=false" type="text/javascript"></script>
 		<script src="http://code.jquery.com/jquery-1.6.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+		  {lang: 'fr'}
+		</script>
 		<script src="http://code.jquery.com/ui/1.8.13/jquery-ui.min.js" type="text/javascript"></script>
+		
 		<?php include_javascripts() ?>
 
 		<script type="text/javascript">
@@ -126,7 +130,20 @@
 		    	    <a href="/">ZoneCone<span>.ca</span></a>
 			  </h1>
 			</div>
+			
                         <div id="nav">
+													<div id="fb-root"></div>
+													<script>(function(d, s, id) {
+													  var js, fjs = d.getElementsByTagName(s)[0];
+													  if (d.getElementById(id)) {return;}
+													  js = d.createElement(s); js.id = id;
+													  js.src = "//connect.facebook.net/en_US/all.js#appId=155922517829169&xfbml=1";
+													  fjs.parentNode.insertBefore(js, fjs);
+													}(document, 'script', 'facebook-jssdk'));</script>
+
+                          <div class="sharebuttons"><a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="ZoneCone" data-lang="fr">Tweeter</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>
+													<div class="sharebuttons"><g:plusone  size="medium" count="false"></g:plusone></div>
+                          <div class="sharebuttons"><iframe src="//www.facebook.com/plugins/like.php?app_id=251097881595457&amp;href=http%3A%2F%2Fzonecone.ca&amp;send=false&amp;layout=button_count&amp;width=80&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe></div>
                                 <?php if ($sf_user->isAuthenticated()): ?>
                                   <div class="subnav" id="who"> Connect&eacute;: <?php echo $sf_user->getGuardUser()->getUsername(); ?></div>
                                   <div class="subnav" id="options"><a href="/settings">Options</a></div>
@@ -190,5 +207,6 @@
                         </div>
 			<div id="map_canvas"></div>
 		</div>
+		<div id="footer" class="ui-layout-south">meuh</div>
 	</body>
 </html>
